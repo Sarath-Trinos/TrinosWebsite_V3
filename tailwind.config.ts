@@ -23,6 +23,7 @@ export default {
         'surface-soft': 'hsl(var(--surface-soft))',
         'surface-tint': 'hsl(var(--surface-tint))',
         'surface-dark': 'hsl(var(--surface-dark))',
+        'on-surface-dark': 'hsl(var(--on-surface-dark))',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
