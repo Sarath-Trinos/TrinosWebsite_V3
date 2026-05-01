@@ -23,17 +23,19 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/85 backdrop-blur-xl shadow-soft" : "bg-transparent"
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-surface-dark ${
+        scrolled ? "shadow-soft" : ""
       }`}
     >
       <div className="container-px max-w-[1400px] mx-auto flex items-center justify-between h-18 py-4">
-        <Logo />
+        <div className="[&_span:last-child]:text-on-surface-dark">
+          <Logo />
+        </div>
 
         <nav className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => (
             <div key={item.label} className="relative group">
-              <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground rounded-full transition-colors">
+              <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-on-surface-dark/80 hover:text-on-surface-dark rounded-full transition-colors">
                 {item.label}
                 <ChevronDown className="w-3.5 h-3.5 opacity-60" />
               </button>
@@ -51,13 +53,13 @@ const Header = () => {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
-          <a href="#" className="text-sm font-semibold text-foreground/80 hover:text-foreground px-4 py-2">Sign in</a>
+          <a href="#" className="text-sm font-semibold text-on-surface-dark/80 hover:text-on-surface-dark px-4 py-2">Sign in</a>
           <a href="#demo" className="text-sm font-semibold bg-gradient-cta text-primary-foreground px-5 py-2.5 rounded-full shadow-soft hover:shadow-glow transition-all">
             Book a demo
           </a>
         </div>
 
-        <button className="lg:hidden p-2" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+        <button className="lg:hidden p-2 text-on-surface-dark" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
