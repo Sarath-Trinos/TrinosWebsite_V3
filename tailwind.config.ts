@@ -13,7 +13,16 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Sora', 'Inter', 'sans-serif'],
+      },
       colors: {
+        'primary-glow': 'hsl(var(--primary-glow))',
+        'primary-deep': 'hsl(var(--primary-deep))',
+        'surface-soft': 'hsl(var(--surface-soft))',
+        'surface-tint': 'hsl(var(--surface-tint))',
+        'surface-dark': 'hsl(var(--surface-dark))',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
