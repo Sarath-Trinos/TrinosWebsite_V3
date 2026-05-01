@@ -53,13 +53,13 @@ const Header = () => {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
-          <a href="#" className="text-sm font-semibold text-foreground/80 hover:text-foreground px-4 py-2">Sign in</a>
+          <a href="#" className="text-sm font-semibold text-on-surface-dark/80 hover:text-on-surface-dark px-4 py-2">Sign in</a>
           <a href="#demo" className="text-sm font-semibold bg-gradient-cta text-primary-foreground px-5 py-2.5 rounded-full shadow-soft hover:shadow-glow transition-all">
             Book a demo
           </a>
         </div>
 
-        <button className="lg:hidden p-2" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+        <button className="lg:hidden p-2 text-on-surface-dark" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
