@@ -10,7 +10,7 @@ import CustomerStories from "@/components/site/CustomerStories";
 import CTASection from "@/components/site/CTASection";
 import Footer from "@/components/site/Footer";
 
-const Index = () => {
+export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Header />
@@ -26,6 +26,4 @@ const Index = () => {
       <Footer />
     </main>
   );
-};
-
-export default Index;
+}

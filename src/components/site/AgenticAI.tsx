@@ -1,4 +1,5 @@
 import { ArrowRight, Bot, Layers } from "lucide-react";
+import Image from "next/image";
 import SectionHeader from "./SectionHeader";
 import manish from "@/assets/agent-manish.jpg";
 import grace from "@/assets/agent-grace.jpg";
@@ -27,7 +28,7 @@ const AgenticAI = () => (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {agents.map((a) => (
               <div key={a.name} className="bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-glow transition-all hover:-translate-y-1">
-                <img src={a.img} alt={`${a.name}, ${a.role}`} loading="lazy" width={768} height={768} className="w-full aspect-square object-cover" />
+                <Image src={a.img} alt={`${a.name}, ${a.role}`} placeholder="blur" className="w-full aspect-square object-cover" />
                 <div className="p-3">
                   <div className="font-semibold text-sm text-foreground">{a.name}</div>
                   <div className="text-xs text-muted-foreground">{a.role}</div>

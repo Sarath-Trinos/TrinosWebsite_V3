@@ -1,4 +1,5 @@
 import { ArrowRight, Sparkles } from "lucide-react";
+import Image from "next/image";
 import heroAgent from "@/assets/hero-agent.jpg";
 
 const Hero = () => {
@@ -15,8 +16,9 @@ const Hero = () => {
               <Sparkles className="w-3.5 h-3.5" /> Introducing Avaamo Agents
             </span>
             <h1 className="mt-6 font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.02] text-balance">
-              The next evolution of your{" "}
-              <span className="bg-gradient-cta bg-clip-text text-transparent">workforce</span>
+              Transforming Enterprises with{" "}
+              <span className="bg-gradient-cta bg-clip-text text-transparent">Intelligent, Secure &amp; Scalable</span>{" "}
+              Technology
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl text-balance">
               Empower your enterprise with AI agents that understand your customers, solve their
@@ -54,12 +56,12 @@ const Hero = () => {
           {/* Hero image */}
           <div className="relative animate-fade-up [animation-delay:200ms]">
             <div className="relative tile">
-              <img
+              <Image
                 src={heroAgent}
                 alt="Avaamo AI agent representative wearing a headset"
                 className="w-full h-auto object-cover"
-                width={1280}
-                height={1024}
+                placeholder="blur"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-transparent" />
             </div>

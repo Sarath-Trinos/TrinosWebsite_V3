@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Logo from "./Logo";
