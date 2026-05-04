@@ -1,4 +1,14 @@
 import Logo from "./Logo";
+import { Linkedin, Twitter, Facebook, Youtube, Instagram, Github } from "lucide-react";
+
+const socials = [
+  { icon: Linkedin, label: "LinkedIn", href: "#" },
+  { icon: Twitter, label: "Twitter", href: "#" },
+  { icon: Facebook, label: "Facebook", href: "#" },
+  { icon: Youtube, label: "YouTube", href: "#" },
+  { icon: Instagram, label: "Instagram", href: "#" },
+  { icon: Github, label: "GitHub", href: "#" },
+];
 
 const footerCols = [
   { title: "Platform", links: ["Agentic Platform", "Trust Architecture", "Integrations", "Security"] },
@@ -18,6 +28,18 @@ const Footer = () => (
           <p className="mt-5 text-white/70 max-w-sm">
             Avaamo builds AI agents that deliver human experiences at AI scale for the world's largest enterprises.
           </p>
+          <div className="mt-6 flex items-center gap-3">
+            {socials.map(({ icon: Icon, label, href }) => (
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                className="h-9 w-9 inline-flex items-center justify-center rounded-full border border-white/15 text-white/70 hover:text-white hover:border-primary-glow hover:bg-primary/20 transition-colors"
+              >
+                <Icon size={16} />
+              </a>
+            ))}
+          </div>
         </div>
         {footerCols.map((c) => (
           <div key={c.title}>
