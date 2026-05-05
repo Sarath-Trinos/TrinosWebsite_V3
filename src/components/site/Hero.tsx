@@ -12,26 +12,20 @@ const Hero = () => {
       <div className="container-px max-w-[1400px] mx-auto relative">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <div className="animate-fade-up">
-            <span className="chip">
-              <Sparkles className="w-3.5 h-3.5" /> Introducing Avaamo Agents
-            </span>
             <h1 className="mt-6 font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.02] text-balance">
-              Transforming Enterprises with{" "}
-              <span className="bg-gradient-cta bg-clip-text text-transparent">Intelligent, Secure &amp; Scalable</span>{" "}
-              Technology
+              Transforming Enterprises with Intelligent, Secure &amp; Scalable Technology
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl text-balance">
-              Empower your enterprise with AI agents that understand your customers, solve their
-              problems naturally, and deliver exceptional interactions across every touchpoint.
+            We empower organizations to accelerate innovation through advanced AI systems, robust Cyber Security, Cloud Modernization, and Enterprise-grade Software Engineering. 
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a href="#agents" className="group inline-flex items-center gap-2 bg-gradient-cta text-primary-foreground font-semibold px-7 py-3.5 rounded-full shadow-glow hover:shadow-card transition-all">
-                Explore Avaamo Agents
+                Start Your AI Project
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a href="#demo" className="inline-flex items-center gap-2 font-semibold px-6 py-3.5 rounded-full border border-border hover:border-primary hover:text-primary transition-colors">
-                Watch demo
+                Explore Our Services
               </a>
             </div>
 

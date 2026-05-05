@@ -19,11 +19,11 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://trinos.ai"),
-  title: "Trinos — Conversational AI Agents for the Enterprise",
+  title: "Trinos — Power Enterprise decisions with AI that works",
   description:
     "Deploy AI agents that deliver human experiences at AI scale. Voice AI, contact center copilots, and healthcare agents trusted by the world's largest enterprises.",
   openGraph: {
-    title: "Trinos — Conversational AI Agents for the Enterprise",
+    title: "Trinos — Power Enterprise decisions with AI that works",
     description:
       "Deploy AI agents that deliver human experiences at AI scale across customer service, contact center, and healthcare.",
     type: "website",

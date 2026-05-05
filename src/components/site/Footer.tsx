@@ -22,9 +22,7 @@ const Footer = () => (
     <div className="container-px max-w-[1400px] mx-auto">
       <div className="grid lg:grid-cols-6 gap-10 pb-14 border-b border-white/10">
         <div className="lg:col-span-2">
-          <div className="invert">
-            <Logo />
-          </div>
+          <Logo />
           <p className="mt-5 text-white/70 max-w-sm">
             Avaamo builds AI agents that deliver human experiences at AI scale for the world's largest enterprises.
           </p>

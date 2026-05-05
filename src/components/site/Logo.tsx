@@ -1,10 +1,39 @@
-const Logo = ({ className = "" }: { className?: string }) => (
-  <a href="#" className={`flex items-center gap-2 ${className}`} aria-label="Avaamo home">
-    <span className="grid place-items-center w-9 h-9 rounded-full bg-gradient-primary text-primary-foreground font-display font-bold text-sm shadow-glow">
-      a
-    </span>
-    <span className="font-display font-bold text-xl tracking-tight text-foreground">avaamo</span>
-  </a>
-);
+import Image from "next/image";
+import Link from "next/link";
+
+type LogoProps = {
+  className?: string;
+  /** Taller image + wordmark tuning for the fixed header */
+  variant?: "default" | "header";
+};
+
+const Logo = ({ className = "", variant = "default" }: LogoProps) => {
+  const isHeader = variant === "header";
+
+  return (
+    <Link
+      href="/"
+      className={`flex items-center ${isHeader ? "gap-1.5 md:gap-2" : "gap-1.5"} ${className}`}
+      aria-label="Trinos home"
+    >
+      <Image
+        src="/Logo.png"
+        alt=""
+        width={isHeader ? 200 : 150}
+        height={isHeader ? 50 : 40}
+        className={`w-auto object-contain ${isHeader ? "h-10 md:h-12" : "h-9"}`}
+        priority={isHeader}
+        sizes={isHeader ? "(min-width: 768px) 12rem, 10rem" : "9rem"}
+      />
+      <span
+        className={`logo-wordmark font-display font-semibold tracking-tight text-inherit lowercase leading-none ${
+          isHeader ? "text-[2rem] md:text-[2.25rem]" : "text-[1.5rem]"
+        }`}
+      >
+        trinos
+      </span>
+    </Link>
+  );
+};
 
 export default Logo;

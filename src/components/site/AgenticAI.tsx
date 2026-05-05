@@ -1,78 +1,96 @@
-import { ArrowRight, Bot, Layers } from "lucide-react";
+import { ArrowRight, Layers } from "lucide-react";
 import Image from "next/image";
 import SectionHeader from "./SectionHeader";
+import { CapabilityTopicsList } from "./CapabilityTopicsList";
 import manish from "@/assets/agent-manish.jpg";
 import grace from "@/assets/agent-grace.jpg";
 import daphne from "@/assets/agent-daphne.jpg";
 import johnny from "@/assets/agent-johnny.jpg";
+import heroAgent from "@/assets/hero-agent.jpg";
 
-const agents = [
-  { name: "Manish", role: "Orders & Shipping Agent", img: manish },
-  { name: "Grace", role: "Account Access Agent", img: grace },
-  { name: "Daphne", role: "Medical Records Agent", img: daphne },
-  { name: "Johnny", role: "Product & Services Agent", img: johnny },
+const capabilities = [
+  {
+    id: "agentic-ai",
+    title: "Agentic AI",
+    img: manish,
+    description:
+      "Multi-step autonomous agents that plan, call tools, and take action. Safeguards and human-in-the-loop baked in.",
+  },
+  {
+    id: "rag",
+    title: "Retrieval-Augmented Generation",
+    img: grace,
+    description:
+      "Build intelligent systems that combine the power of large language models with your proprietary data.",
+  },
+  {
+    id: "mvp",
+    title: "MVP Development",
+    img: daphne,
+    description:
+      "Design and ship a production-ready Minimum Viable Product fast—clean UX, reliable backend, and AI features where they matter most.",
+  },
+  {
+    id: "voice",
+    title: "Voice Assistants & Chatbots",
+    img: johnny,
+    description:
+      "Real-time natural conversations with speech-to-text and TTS. Domain-aware assistants for support, sales, and internal ops.",
+  },
+  {
+    id: "nlp-cv",
+    title: "NLP, Computer Vision",
+    img: heroAgent,
+    description:
+      "Leverage natural language processing and computer vision technologies.",
+  },
+  {
+    id: "rpa",
+    title: "Robotic Process Automation (RPA)",
+    img: heroAgent,
+    description:
+      "Automate repetitive business processes and workflows to improve efficiency and reduce errors.",
+  },
 ];
 
 const AgenticAI = () => (
   <section id="agents" className="py-24 bg-surface-soft">
     <div className="container-px max-w-[1400px] mx-auto">
       <SectionHeader
-        eyebrow="Agentic AI"
-        title="A workforce of AI agents, ready to work"
+        title="AI & Intelligent Systems"
+        description="Specialized AI agents and enterprise platforms that transform support, workforce operations, and healthcare—with human-like intelligence you can deploy at scale."
         exploreHref="#"
       />
 
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Big tile: Agents gallery */}
-        <div className="lg:col-span-2 tile bg-gradient-tile p-8 md:p-10 flex flex-col justify-between min-h-[460px]">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {agents.map((a) => (
-              <div key={a.name} className="bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-glow transition-all hover:-translate-y-1">
-                <Image src={a.img} alt={`${a.name}, ${a.role}`} placeholder="blur" className="w-full aspect-square object-cover" />
+        <div className="lg:col-span-2 tile bg-gradient-tile p-8 md:p-10 flex flex-col min-h-[460px]">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {capabilities.map((c) => (
+              <div key={c.id} className="bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-glow transition-all hover:-translate-y-1">
+                <Image src={c.img} alt="" placeholder="blur" className="w-full aspect-square object-cover" />
                 <div className="p-3">
-                  <div className="font-semibold text-sm text-foreground">{a.name}</div>
-                  <div className="text-xs text-muted-foreground">{a.role}</div>
+                  <div className="font-semibold text-sm text-foreground text-balance leading-snug">{c.title}</div>
                 </div>
               </div>
             ))}
           </div>
-
-          <div className="mt-8">
-            <div className="flex items-center gap-2 chip mb-3"><Bot className="w-3.5 h-3.5" /> Agents</div>
-            <h3 className="font-display font-bold text-3xl md:text-4xl mb-3 text-balance">
-              AI workforces with human-like intelligence
-            </h3>
-            <p className="text-muted-foreground max-w-xl">
-              Transforming employee support, workforce management, and healthcare with always-on AI agents.
-            </p>
-            <a href="#" className="link-arrow mt-5">Explore Agents <ArrowRight className="w-4 h-4" /></a>
-          </div>
         </div>
 
-        {/* Side tile: Agentic platform */}
+        {/* Side tile: same capability topics */}
         <div className="tile bg-gradient-dark text-on-surface-dark p-8 md:p-10 flex flex-col justify-between min-h-[460px] relative overflow-hidden">
           <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-primary/30 blur-3xl" />
-          <div className="relative">
-            <Layers className="w-10 h-10 text-primary-glow mb-4" />
-            <div className="space-y-3">
-              {["Discover", "Build", "Deploy", "Monitor", "Scale"].map((step, i) => (
-                <div key={step} className="flex items-center gap-3 bg-white/5 backdrop-blur rounded-xl px-4 py-3 border border-white/10">
-                  <span className="w-6 h-6 grid place-items-center rounded-full bg-primary text-primary-foreground text-xs font-bold">{i + 1}</span>
-                  <span className="font-medium">{step}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="relative mt-8">
-            <span className="chip bg-white/10 text-white border border-white/10">Agentic Platform</span>
-            <h3 className="font-display font-bold text-2xl md:text-3xl mt-3 mb-3">
-              Build every step on one platform
-            </h3>
-            <p className="text-white/70 text-sm">
-              Deploy production-ready enterprise agents faster and more reliably across your organization.
-            </p>
-            <a href="#" className="inline-flex items-center gap-2 mt-5 font-semibold text-primary-glow hover:gap-3 transition-all">
-              Explore Agentic Platform <ArrowRight className="w-4 h-4" />
+          <div className="relative flex flex-col h-full">
+            <Layers className="w-10 h-10 text-primary-glow mb-4 shrink-0" />
+            <CapabilityTopicsList
+              items={capabilities.map(({ id, title, description }) => ({
+                id,
+                title,
+                description,
+              }))}
+            />
+            <a href="#" className="inline-flex items-center gap-2 mt-8 font-semibold text-primary-glow hover:gap-3 transition-all shrink-0">
+              Explore capabilities <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         </div>
