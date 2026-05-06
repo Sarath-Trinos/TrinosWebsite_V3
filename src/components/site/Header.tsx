@@ -39,12 +39,12 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-surface-dark ${
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white/75 backdrop-blur-md ${
         scrolled ? "shadow-soft" : ""
       }`}
     >
       <div className="container-px max-w-[1400px] mx-auto flex items-center justify-between min-h-[4.5rem] py-3 md:min-h-[5rem] md:py-4">
-        <div className="[&_.logo-wordmark]:text-on-surface-dark">
+        <div className="[&_.logo-wordmark]:text-[#0c3470] [&_.logo-wordmark]:font-normal">
           <Logo variant="header" />
         </div>
 
@@ -54,7 +54,7 @@ const Header = () => {
               <div key={item.label} className="relative group">
                 <button
                   type="button"
-                  className="flex items-center gap-1 px-4 py-2 text-base font-medium text-on-surface-dark/80 hover:text-on-surface-dark rounded-full transition-colors"
+                  className="flex items-center gap-1 px-4 py-2 text-base font-medium text-foreground/80 hover:text-foreground rounded-full transition-colors"
                 >
                   {item.label}
                   <ChevronDown className="w-3.5 h-3.5 opacity-60" />
@@ -77,7 +77,7 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="px-4 py-2 text-base font-medium text-on-surface-dark/80 hover:text-on-surface-dark rounded-full transition-colors"
+                className="px-4 py-2 text-base font-medium text-foreground/80 hover:text-foreground rounded-full transition-colors"
               >
                 {item.label}
               </a>
@@ -95,7 +95,7 @@ const Header = () => {
         </div>
 
         <button
-          className="lg:hidden p-2 text-on-surface-dark"
+          className="lg:hidden p-2 text-foreground"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
