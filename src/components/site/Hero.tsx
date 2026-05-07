@@ -1,21 +1,50 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const video = videoRef.current;
+    if (!section || !video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="relative pt-28 lg:pt-32 pb-20 min-h-screen flex items-center overflow-hidden bg-black">
-      {/* background videos at full opacity */}
+    <section
+      ref={sectionRef}
+      className="relative pt-28 lg:pt-32 pb-20 min-h-screen flex items-center overflow-hidden bg-black isolate"
+      style={{ contain: "layout paint" }}
+    >
       <video
+        ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
         loop
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
         aria-hidden="true"
+        poster="/home/Gemini_Generated_Image_xisb22xisb22xisb.png"
       >
         <source src="/home/May_05_0114_pm_31s_202605061102_hnu9v.mp4" type="video/mp4" />
       </video>
-      {/* left-side dark gradient for text readability (Avaamo-style) */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent" />
 
       <div className="container-px max-w-[1400px] mx-auto relative z-10 w-full">

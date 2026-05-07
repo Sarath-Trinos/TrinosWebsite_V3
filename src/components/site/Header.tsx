@@ -13,15 +13,15 @@ function isDropdown(item: NavItem): item is NavDropdown {
 }
 
 const navItems: NavItem[] = [
-  { label: "About Us", href: "#" },
-  { label: "Solutions", href: "#" },
-  { label: "Products", href: "#" },
-  { label: "Services", href: "#" },
+  { label: "About Us", href: "/about" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Products", href: "/products" },
+  { label: "Services", href: "/services" },
   {
     label: "Company",
     children: [
-      { label: "Team", href: "#" },
-      { label: "Careers", href: "#" },
+      { label: "Team", href: "/team" },
+      { label: "Careers", href: "/careers" },
     ],
   },
 ];
@@ -31,16 +31,24 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 12);
+        ticking = false;
+      });
+    };
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white/75 backdrop-blur-md ${
-        scrolled ? "shadow-soft" : ""
+      className={`fixed top-0 inset-x-0 z-50 transition-shadow duration-300 ${
+        scrolled ? "bg-white shadow-soft" : "bg-white/95"
       }`}
     >
       <div className="container-px max-w-[1400px] mx-auto flex items-center justify-between min-h-[4.5rem] py-3 md:min-h-[5rem] md:py-4">
