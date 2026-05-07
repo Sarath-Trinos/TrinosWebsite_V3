@@ -7,7 +7,6 @@ import {
   Smartphone,
   Layers,
   Building2,
-  ArrowUpRight,
   Briefcase,
   ShieldCheck,
   Users,
@@ -25,7 +24,7 @@ type Service = {
   description: string;
 };
 
-const featured: Service[] = [
+const services: Service[] = [
   {
     icon: BarChart3,
     title: "Generative AI & Analytics",
@@ -74,9 +73,6 @@ const featured: Service[] = [
     description:
       "Accelerate your cloud transformation with secure, scalable, and cost-optimized cloud ecosystems.",
   },
-];
-
-const additional: Service[] = [
   {
     icon: BrainCircuit,
     title: "Domain-Specific LLMs Fine-Tuning",
@@ -128,7 +124,7 @@ const additional: Service[] = [
 ];
 
 const OurServices = () => (
-  <section id="our-services" className="py-24 bg-surface-soft">
+  <section id="our-services" className="py-24 bg-background">
     <div className="container-px max-w-[1400px] mx-auto">
       <SectionHeader
         eyebrow="Our services"
@@ -136,44 +132,23 @@ const OurServices = () => (
         description="Designed for impact and scale — from generative AI to industrial automation, we deliver the systems that move enterprises forward."
       />
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {featured.map(({ icon: Icon, title, description }) => (
-          <div
-            key={title}
-            className="group tile bg-gradient-dark text-white p-7 flex flex-col gap-5 min-h-[280px] hover:shadow-glow"
-          >
-            <div className="flex items-center justify-between">
-              <div className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur grid place-items-center shadow-soft">
-                <Icon className="w-6 h-6 text-white" />
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+        {services.map(({ icon: Icon, title, description }) => (
+          <div key={title} className="group cursor-pointer">
+            <div className="relative h-64 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/40 via-primary/15 to-[#0f1115] transition-transform duration-300 group-hover:-translate-y-1">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.12),transparent_60%)]" />
+              <div className="absolute inset-0 grid place-items-center">
+                <div className="w-24 h-24 rounded-3xl bg-white/10 backdrop-blur-sm border border-white/15 grid place-items-center shadow-soft transition-transform duration-300 group-hover:scale-110">
+                  <Icon className="w-10 h-10 text-white" strokeWidth={1.5} />
+                </div>
               </div>
-              <ArrowUpRight className="w-5 h-5 text-white/60 transition-all group-hover:text-white group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </div>
-            <div>
-              <h3 className="font-display font-bold text-xl leading-snug text-balance">
-                {title}
-              </h3>
-              <p className="mt-3 text-sm text-white/75 leading-relaxed text-balance">
-                {description}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
 
-      <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {additional.map(({ icon: Icon, title, description }) => (
-          <div
-            key={title}
-            className="group tile bg-card p-7 flex flex-col gap-4 hover:shadow-glow"
-          >
-            <div className="w-11 h-11 rounded-2xl bg-gradient-primary grid place-items-center shadow-soft">
-              <Icon className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <h3 className="font-display font-bold text-lg text-foreground leading-snug">
+            <div className="mt-5">
+              <h3 className="font-display font-semibold text-xl text-foreground leading-snug text-balance">
                 {title}
               </h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 {description}
               </p>
             </div>

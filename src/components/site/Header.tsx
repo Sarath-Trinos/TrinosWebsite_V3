@@ -95,7 +95,7 @@ const Header = () => {
 
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="#demo"
+            href="/contact"
             className="text-base font-semibold bg-gradient-cta text-primary-foreground px-5 py-2.5 rounded-full shadow-soft hover:shadow-glow transition-all"
           >
             Contact Us
@@ -139,7 +139,7 @@ const Header = () => {
               )
             )}
             <a
-              href="#demo"
+              href="/contact"
               className="block mt-4 text-center bg-gradient-cta text-primary-foreground py-3 rounded-full font-semibold"
             >
               Contact Us
