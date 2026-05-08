@@ -19,8 +19,8 @@ export default function AboutPage() {
       <Header />
       <AboutHero />
       <WhoWeAre />
-      <MissionVision />
       <OurValues />
+      <MissionVision />
       <CTASection />
       <Footer />
     </main>

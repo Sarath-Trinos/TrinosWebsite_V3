@@ -69,6 +69,7 @@ const tiles: Tile[] = [
     description:
       "Automate repetitive business processes and workflows to improve efficiency and reduce errors.",
     image: grace,
+    video: "/videos/Robotic automation section.mp4",
   },
 ];
 
@@ -187,6 +188,7 @@ const AgentPlatform = () => {
                     key={title}
                     onMouseEnter={() => handleActivate(i)}
                     onFocus={() => handleActivate(i)}
+                    onClick={() => handleActivate(i)}
                     tabIndex={0}
                     role="button"
                     aria-pressed={isActive}

@@ -24,7 +24,7 @@ const Footer = () => (
         <div className="lg:col-span-2">
           <Logo />
           <p className="mt-5 text-white/70 max-w-sm">
-            Avaamo builds AI agents that deliver human experiences at AI scale for the world's largest enterprises.
+            Trinos builds AI agents that deliver human experiences at AI scale for the world's largest enterprises.
           </p>
           <div className="mt-6 flex items-center gap-3">
             {socials.map(({ icon: Icon, label, href }) => (
@@ -51,7 +51,7 @@ const Footer = () => (
         ))}
       </div>
       <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
-        <p>© {new Date().getFullYear()} Avaamo Clone. Built as a UI demonstration.</p>
+        <p>© {new Date().getFullYear()} Trinos Technologies. All rights reserved.</p>
         <div className="flex gap-6">
           <a href="#" className="hover:text-white">Privacy</a>
           <a href="#" className="hover:text-white">Terms</a>

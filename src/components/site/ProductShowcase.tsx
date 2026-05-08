@@ -1,12 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowRight, Check } from "lucide-react";
+import { useEffect, useState } from "react";
 
 type Product = {
   name: string;
   eyebrow: string;
   description: string;
   highlights: string[];
-  image: string;
+  images: string[];
   imageAlt: string;
   reverse?: boolean;
 };
@@ -25,7 +28,12 @@ const products: Product[] = [
       "Conversational interface that feels like a knowledgeable friend",
       "Always-on support for the questions that come up at 2am",
     ],
-    image: "/products/Moltter.png",
+    images: [
+      "/products/Moltter.png",
+      "/products/Moltter_2.png",
+      "/products/Moltter_3.png",
+      "/products/Moltter_4.png",
+    ],
     imageAlt: "Moltter product screenshot",
   },
   {
@@ -41,7 +49,16 @@ const products: Product[] = [
       "Real-time analysis in under 3 minutes",
       "Comprehensive dashboard with activity tracking",
     ],
-    image: "/products/screenshot-1.jpg",
+    images: [
+      "/products/screenshot-1.jpg",
+      "/products/screenshot-2.jpg",
+      "/products/screenshot-3.jpg",
+      "/products/screenshot-4.jpg",
+      "/products/screenshot-5.jpg",
+      "/products/screenshot-6.jpg",
+      "/products/screenshot-7.jpg",
+      "/products/screenshot-8.jpg",
+    ],
     imageAlt: "BillDefend AI product screenshot",
     reverse: true,
   },
@@ -58,7 +75,11 @@ const products: Product[] = [
       "Production order management and dispatch coordination",
       "Comprehensive reporting and analytics dashboard",
     ],
-    image: "/products/traceflow-6.jpg",
+    images: [
+      "/products/traceflow-6.jpg",
+      "/products/traceflow-7.jpg",
+      "/products/traceflow-8.jpg",
+    ],
     imageAlt: "TraceFlow product screenshot",
   },
   {
@@ -74,11 +95,75 @@ const products: Product[] = [
       "Smart insights and key takeaways extraction",
       "Seamless integration with meeting platforms",
     ],
-    image: "/products/meeting-1.jpg",
+    images: [
+      "/products/meeting-1.jpg",
+      "/products/meeting-2.jpg",
+      "/products/meeting-3.jpg",
+      "/products/meeting-4.jpg",
+      "/products/meeting-5.jpg",
+    ],
     imageAlt: "MeetingBrain product screenshot",
     reverse: true,
   },
 ];
+
+const ProductImageSlideshow = ({
+  images,
+  alt,
+  intervalMs = 3500,
+}: {
+  images: string[];
+  alt: string;
+  intervalMs?: number;
+}) => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % images.length);
+    }, intervalMs);
+    return () => clearInterval(id);
+  }, [images.length, intervalMs]);
+
+  return (
+    <div className="relative">
+      <div className="absolute -inset-6 bg-gradient-tile rounded-[36px] blur-2xl opacity-70" />
+      <div className="relative tile bg-card pt-0 px-0 pb-3 md:pb-4">
+        <div className="relative w-full aspect-[16/11] overflow-hidden rounded-[22px] bg-surface-soft">
+          {images.map((src, i) => (
+            <Image
+              key={src}
+              src={src}
+              alt={alt}
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className={`object-contain transition-opacity duration-700 ease-in-out ${
+                i === index ? "opacity-100" : "opacity-0"
+              }`}
+              priority={i === 0}
+            />
+          ))}
+        </div>
+        {images.length > 1 && (
+          <div className="mt-4 flex justify-center gap-2">
+            {images.map((src, i) => (
+              <button
+                key={src}
+                type="button"
+                aria-label={`Show image ${i + 1}`}
+                onClick={() => setIndex(i)}
+                className={`h-1.5 rounded-full transition-all ${
+                  i === index ? "w-6 bg-primary" : "w-2 bg-foreground/20 hover:bg-foreground/40"
+                }`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const ProductShowcase = () => (
   <section id="products" className="py-24 bg-surface-soft">
@@ -119,18 +204,7 @@ const ProductShowcase = () => (
             </a>
           </div>
 
-          <div className="relative">
-            <div className="absolute -inset-6 bg-gradient-tile rounded-[36px] blur-2xl opacity-70" />
-            <div className="relative tile bg-card p-3 md:p-4">
-              <Image
-                src={product.image}
-                alt={product.imageAlt}
-                width={1600}
-                height={1100}
-                className="w-full h-auto rounded-[22px] object-cover"
-              />
-            </div>
-          </div>
+          <ProductImageSlideshow images={product.images} alt={product.imageAlt} />
         </div>
       ))}
     </div>

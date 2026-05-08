@@ -19,7 +19,7 @@ const values = [
 ];
 
 const OurValues = () => (
-  <section className="py-24">
+  <section className="bg-background py-24">
     <div className="container-px max-w-[1400px] mx-auto">
       <SectionHeader
         eyebrow="Our values"

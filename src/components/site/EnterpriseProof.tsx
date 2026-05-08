@@ -24,7 +24,7 @@ const EnterpriseProof = () => (
         <div className="grid gap-5">
           {[
             { stat: "95%", label: "of enterprise AI pilots fail at the last mile" },
-            { stat: "10x", label: "faster time to production with Avaamo" },
+            { stat: "10x", label: "faster time to production with Trinos" },
             { stat: "100%", label: "compliance with SOC 2, HIPAA, and GDPR" },
           ].map((s) => (
             <div key={s.stat} className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 flex items-center gap-5">

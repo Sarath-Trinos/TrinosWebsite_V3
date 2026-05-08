@@ -1,42 +1,47 @@
-import { Target, Telescope } from "lucide-react";
+import Image from "next/image";
 
 const items = [
   {
-    icon: Target,
-    eyebrow: "Our mission",
+    title: "Our mission",
     text: "To empower organizations with intelligent and secure digital solutions that accelerate transformation and unlock operational excellence.",
+    image: "/about us /CareersPage_Hero.jpg",
+    alt: "Our mission",
   },
   {
-    icon: Telescope,
-    eyebrow: "Our vision",
+    title: "Our vision",
     text: "To be a global leader in AI-driven enterprise transformation by delivering future-ready, scalable, and secure technology platforms.",
+    image:
+      "/about us /business-ecosystems-partnerships-concept-business-collaboration-strategies-value-network-solution-creating-new-opportunities-task-relations-collaboration-team-building.jpg",
+    alt: "Our vision",
   },
 ];
 
 const MissionVision = () => (
-  <section className="py-24 bg-gradient-dark text-on-surface-dark relative overflow-hidden">
-    <div className="absolute -top-40 left-1/3 w-[600px] h-[600px] rounded-full bg-primary/20 blur-3xl" />
-    <div className="absolute -bottom-32 right-0 w-[420px] h-[420px] rounded-full bg-primary-glow/10 blur-3xl" />
+  <section className="w-full bg-surface-soft">
+    <div className="grid grid-cols-1 md:grid-cols-2">
+      {items.map(({ title, text, image, alt }) => (
+        <article key={title} className="flex flex-col">
+          <div className="relative aspect-[16/10] md:aspect-[16/9] overflow-hidden">
+            <Image
+              src={image}
+              alt={alt}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+              priority
+            />
+          </div>
 
-    <div className="container-px max-w-[1400px] mx-auto relative">
-      <div className="grid md:grid-cols-2 gap-6">
-        {items.map(({ icon: Icon, eyebrow, text }) => (
-          <div
-            key={eyebrow}
-            className="bg-white/5 backdrop-blur border border-white/10 rounded-[28px] p-8 md:p-10 flex flex-col gap-5"
-          >
-            <div className="w-12 h-12 rounded-2xl bg-gradient-primary grid place-items-center shadow-glow">
-              <Icon className="w-6 h-6 text-white" />
-            </div>
-            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-glow">
-              {eyebrow}
-            </div>
-            <p className="text-xl md:text-2xl font-display leading-snug text-white text-balance">
+          <div className="flex flex-col gap-5 p-8 md:p-12 lg:p-16">
+            <h3 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold leading-tight text-foreground text-balance">
+              {title}
+            </h3>
+            <p className="text-base md:text-lg leading-relaxed text-muted-foreground max-w-xl">
               {text}
             </p>
           </div>
-        ))}
-      </div>
+        </article>
+      ))}
     </div>
   </section>
 );

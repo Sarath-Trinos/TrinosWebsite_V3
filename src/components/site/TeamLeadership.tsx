@@ -54,16 +54,13 @@ const TeamLeadership = () => (
         >
           <div className="lg:col-span-2">
             <div className="relative max-w-md mx-auto lg:mx-0">
-              <div className="absolute inset-0 bg-gradient-tile rounded-[36px] blur-2xl opacity-80" />
-              <div className="relative aspect-square rounded-[32px] overflow-hidden bg-gradient-tile shadow-card">
-                <Image
-                  src={founder.image}
-                  alt={`${founder.name} portrait`}
-                  width={800}
-                  height={800}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <Image
+                src={founder.image}
+                alt={`${founder.name} portrait`}
+                width={800}
+                height={800}
+                className="w-full h-auto"
+              />
             </div>
           </div>
 
