@@ -69,23 +69,6 @@ const Hero = () => {
               Explore Our Services
             </a>
           </div>
-
-          <div className="mt-10 flex items-center gap-6 text-sm text-white/70">
-            <div>
-              <div className="font-display text-2xl font-bold text-white">95%</div>
-              deployment success
-            </div>
-            <div className="w-px h-10 bg-white/30" />
-            <div>
-              <div className="font-display text-2xl font-bold text-white">300M+</div>
-              conversations
-            </div>
-            <div className="w-px h-10 bg-white/30" />
-            <div>
-              <div className="font-display text-2xl font-bold text-white">114</div>
-              languages
-            </div>
-          </div>
         </div>
       </div>
     </section>

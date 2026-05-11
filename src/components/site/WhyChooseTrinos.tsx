@@ -88,7 +88,7 @@ const WhyChooseTrinos = () => {
       ref={sectionRef}
       id="why-choose-trinos"
       className="relative bg-surface-soft"
-      style={{ height: `${pillars.length * 80}vh` }}
+      style={{ height: `${pillars.length * 35 + 60}vh` }}
     >
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         <div className="container-px max-w-[1400px] mx-auto w-full">

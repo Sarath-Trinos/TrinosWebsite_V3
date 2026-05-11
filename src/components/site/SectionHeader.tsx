@@ -9,6 +9,12 @@ interface Props {
   exploreLabel?: string;
   /** Use on `bg-surface-dark` (or similar) so headings and copy stay readable */
   tone?: "default" | "dark";
+  /** When set, replaces the default heading typography entirely */
+  titleClassName?: string;
+  /** Stacks and centers heading + description (use with `titleClassName` for bespoke headlines) */
+  headingLayout?: "default" | "centered";
+  /** Applied to the column wrapping eyebrow/title/description (e.g. `max-w-none` for fluid one-line headings) */
+  contentClassName?: string;
 }
 
 const SectionHeader = ({
@@ -18,14 +24,30 @@ const SectionHeader = ({
   exploreHref,
   exploreLabel = "Explore all",
   tone = "default",
+  titleClassName,
+  headingLayout = "default",
+  contentClassName,
 }: Props) => (
-  <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-    <div className="max-w-2xl">
+  <div
+    className={cn(
+      "flex gap-6 mb-12 flex-col",
+      headingLayout === "centered" ? "items-center text-center" : "md:flex-row md:items-end md:justify-between",
+    )}
+  >
+    <div
+      className={cn(
+        headingLayout === "centered" ? "w-full" : "max-w-2xl",
+        contentClassName,
+      )}
+    >
       {eyebrow && <span className="chip mb-4">{eyebrow}</span>}
       <h2
         className={cn(
-          "font-display font-bold text-4xl md:text-5xl text-balance",
-          tone === "dark" && "text-on-surface-dark",
+          titleClassName ??
+            cn(
+              "font-display font-bold text-4xl md:text-5xl text-balance",
+              tone === "dark" && "text-on-surface-dark",
+            ),
         )}
       >
         {title}
@@ -33,7 +55,7 @@ const SectionHeader = ({
       {description && (
         <p
           className={cn(
-            "mt-4 text-lg text-balance",
+            "mt-4 max-w-2xl text-lg text-balance",
             tone === "dark" ? "text-white/70" : "text-muted-foreground",
           )}
         >

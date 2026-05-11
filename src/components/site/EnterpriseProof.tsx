@@ -6,29 +6,30 @@ const EnterpriseProof = () => (
     <div className="container-px max-w-[1400px] mx-auto relative">
       <div className="grid lg:grid-cols-2 gap-14 items-center">
         <div>
-          <span className="chip bg-white/10 text-white border border-white/10">The last mile</span>
+          <span className="chip bg-white/10 text-white border border-white/10">Built for the enterprise</span>
           <h2 className="mt-5 font-display font-bold text-4xl md:text-5xl leading-tight text-balance">
-            While 95% of enterprise AI projects fail,{" "}
-            <span className="bg-gradient-to-r from-primary-glow to-white bg-clip-text text-transparent">we succeed.</span>
+            Where most transformations stall,{" "}
+            <span className="bg-gradient-to-r from-primary-glow to-white bg-clip-text text-transparent">we deliver.</span>
           </h2>
           <p className="mt-5 text-lg text-white/70 text-balance">
-            Enterprise AI pilots are failing at an unprecedented rate — not because the technology
-            doesn't work, but because they fail at deployment. We've cracked the code by mastering
-            the messy reality of enterprise infrastructure, legacy systems, and security compliance.
+            Enterprises don&apos;t struggle because the technology fails — they struggle when AI, Cloud,
+            and ERP modernization collide with legacy systems, fragmented data, and strict compliance
+            mandates. Trinos brings AI-first engineering, security by design, and deep enterprise
+            expertise together to ship transformation that actually reaches production.
           </p>
-          <a href="#" className="inline-flex items-center gap-2 mt-8 bg-gradient-cta text-primary-foreground font-semibold px-7 py-3.5 rounded-full shadow-glow">
-            Read the manifesto <ArrowRight className="w-4 h-4" />
+          <a href="#contact" className="inline-flex items-center gap-2 mt-8 bg-gradient-cta text-primary-foreground font-semibold px-7 py-3.5 rounded-full shadow-glow">
+            Talk to our experts <ArrowRight className="w-4 h-4" />
           </a>
         </div>
 
         <div className="grid gap-5">
           {[
-            { stat: "95%", label: "of enterprise AI pilots fail at the last mile" },
-            { stat: "10x", label: "faster time to production with Trinos" },
-            { stat: "100%", label: "compliance with SOC 2, HIPAA, and GDPR" },
+            { stat: "AI-First", label: "engineering across every solution we build and deliver" },
+            { stat: "10x", label: "faster time to production with secure, scalable architectures" },
+            { stat: "End-to-End", label: "expertise across AI, Cloud, ERP, CRM, and Cyber Security" },
           ].map((s) => (
             <div key={s.stat} className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 flex items-center gap-5">
-              <div className="font-display font-bold text-5xl bg-gradient-to-br from-primary-glow to-white bg-clip-text text-transparent">
+              <div className="font-display font-bold text-5xl bg-gradient-to-br from-primary-glow to-white bg-clip-text text-transparent whitespace-nowrap">
                 {s.stat}
               </div>
               <p className="text-white/80">{s.label}</p>

@@ -1,20 +1,67 @@
 import Logo from "./Logo";
-import { Linkedin, Twitter, Facebook, Youtube, Instagram, Github } from "lucide-react";
+import { Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
 
 const socials = [
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: Facebook, label: "Facebook", href: "#" },
-  { icon: Youtube, label: "YouTube", href: "#" },
-  { icon: Instagram, label: "Instagram", href: "#" },
-  { icon: Github, label: "GitHub", href: "#" },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/feed/update/urn:li:activity:7457033236377124864",
+  },
+  {
+    icon: Twitter,
+    label: "X",
+    href: "https://x.com/TrinosAI1512/status/2051278205739487509?s=20",
+  },
+  {
+    icon: Facebook,
+    label: "Facebook",
+    href: "https://www.facebook.com/share/p/1CHPFd3Ca4/",
+  },
+  {
+    icon: Instagram,
+    label: "Instagram",
+    href: "https://www.instagram.com/p/DX6nGg6kcni/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
 ];
 
 const footerCols = [
-  { title: "Platform", links: ["Agentic Platform", "Trust Architecture", "Integrations", "Security"] },
-  { title: "Solutions", links: ["Agents", "Voice AI", "Agent Copilot", "Healthcare AI", "Ambient AI"] },
-  { title: "Resources", links: ["Blog", "Case Studies", "Docs", "Webinars", "ROI Calculator"] },
-  { title: "Company", links: ["About", "Careers", "Press", "Partners", "Contact"] },
+  {
+    title: "Services",
+    links: [
+      { label: "Generative AI & Analytics", href: "/services" },
+      { label: "Cyber Security", href: "/services" },
+      { label: "Cloud Solutions", href: "/services" },
+      { label: "ERP & CRM", href: "/services" },
+      { label: "Modernization", href: "/services" },
+    ],
+  },
+  {
+    title: "Solutions",
+    links: [
+      { label: "Healthcare & Life Sciences", href: "/solutions" },
+      { label: "Financial Services", href: "/solutions" },
+      { label: "Manufacturing", href: "/solutions" },
+      { label: "Retail & E-Commerce", href: "/solutions" },
+      { label: "Logistics & Supply Chain", href: "/solutions" },
+    ],
+  },
+  {
+    title: "Products",
+    links: [
+      { label: "Moltter", href: "/products" },
+      { label: "BillDefend AI", href: "/products" },
+      { label: "TraceFlow", href: "/products" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About Us", href: "/about" },
+      { label: "Team", href: "/team" },
+      { label: "Careers", href: "/careers" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
 ];
 
 const Footer = () => (
@@ -24,7 +71,7 @@ const Footer = () => (
         <div className="lg:col-span-2">
           <Logo />
           <p className="mt-5 text-white/70 max-w-sm">
-            Trinos builds AI agents that deliver human experiences at AI scale for the world's largest enterprises.
+            Trinos transforms enterprises with intelligent, secure, and scalable technology — from AI and Cloud to Cyber Security and Enterprise Software Engineering.
           </p>
           <div className="mt-6 flex items-center gap-3">
             {socials.map(({ icon: Icon, label, href }) => (
@@ -32,6 +79,8 @@ const Footer = () => (
                 key={label}
                 href={href}
                 aria-label={label}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="h-9 w-9 inline-flex items-center justify-center rounded-full border border-white/15 text-white/70 hover:text-white hover:border-primary-glow hover:bg-primary/20 transition-colors"
               >
                 <Icon size={16} />
@@ -44,7 +93,7 @@ const Footer = () => (
             <h4 className="font-display font-bold text-sm uppercase tracking-wider text-white/90 mb-4">{c.title}</h4>
             <ul className="space-y-3">
               {c.links.map((l) => (
-                <li key={l}><a href="#" className="text-white/60 hover:text-primary-glow text-sm transition-colors">{l}</a></li>
+                <li key={l.label}><a href={l.href} className="text-white/60 hover:text-primary-glow text-sm transition-colors">{l.label}</a></li>
               ))}
             </ul>
           </div>

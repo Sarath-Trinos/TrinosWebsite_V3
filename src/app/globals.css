@@ -76,6 +76,12 @@
     font-family: var(--font-sora), 'Sora', 'Inter', sans-serif;
     letter-spacing: -0.02em;
   }
+
+  @media (pointer: fine) {
+    html, body, * {
+      cursor: none !important;
+    }
+  }
 }
 
 @layer components {
