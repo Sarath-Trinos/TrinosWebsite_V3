@@ -158,10 +158,13 @@ const OurServices = () => {
     <section id="our-services" className="py-10 bg-background">
       <div className="container-px max-w-[1400px] mx-auto">
         <div className="max-w-2xl mb-12">
-          <span className="chip mb-4">Our services</span>
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-balance">
-            Purpose-built solutions across the AI & ERP lifecycle
+          <h2 className="font-display font-normal text-4xl md:text-5xl text-balance">
+            <span className="text-black">Our</span>{" "}
+            <span className="text-brand-gradient-reverse">services</span>
           </h2>
+          <p className="mt-3 max-w-2xl text-balance font-display font-semibold text-lg md:text-xl leading-snug text-foreground">
+            Purpose-built solutions across the AI &amp; ERP lifecycle
+          </p>
           <p className="mt-4 text-lg text-muted-foreground text-balance">
             Designed for impact and scale — from generative AI to industrial automation, we deliver the systems that move enterprises forward.
           </p>

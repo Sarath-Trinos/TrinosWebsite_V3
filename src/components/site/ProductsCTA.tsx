@@ -7,7 +7,7 @@ const ProductsCTA = () => (
         <div className="absolute -top-32 -left-32 w-[400px] h-[400px] rounded-full bg-white/10 blur-3xl" />
         <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-white/10 blur-3xl" />
         <div className="relative">
-          <h2 className="font-display font-normal text-4xl md:text-6xl text-balance">
+          <h2 className="font-display font-normal text-4xl md:text-5xl text-balance">
             Building a product like these?
           </h2>
           <p className="mt-5 text-lg md:text-xl text-white/90 max-w-2xl mx-auto text-balance">

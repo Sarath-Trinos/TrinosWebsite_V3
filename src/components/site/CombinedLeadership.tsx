@@ -11,9 +11,9 @@ const CombinedLeadership = () => (
     <div className="container-px max-w-[1400px] mx-auto">
       <div className="text-center max-w-3xl mx-auto">
         <span className="chip mb-5">Combined leadership</span>
-        <h2 className="font-display font-bold text-4xl md:text-5xl text-balance leading-tight">
+        <h2 className="font-display font-normal text-4xl md:text-5xl text-balance leading-tight">
           Over 50 years of{" "}
-          <span className="bg-gradient-to-r from-primary to-primary-deep bg-clip-text text-transparent">
+          <span className="text-brand-gradient-reverse">
             transformative expertise
           </span>
           .
@@ -32,7 +32,7 @@ const CombinedLeadership = () => (
             key={label}
             className="tile bg-card p-8 text-center"
           >
-            <div className="font-display font-bold text-5xl bg-gradient-to-r from-primary to-primary-deep bg-clip-text text-transparent">
+            <div className="font-display font-bold text-5xl text-brand-gradient-reverse">
               {value}
             </div>
             <p className="mt-3 text-sm text-muted-foreground">{label}</p>

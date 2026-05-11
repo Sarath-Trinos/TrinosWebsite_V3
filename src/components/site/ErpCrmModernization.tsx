@@ -42,8 +42,13 @@ const ErpCrmModernization = () => (
     <div className="container-px max-w-[1400px] mx-auto">
       <div className="mb-16">
         <SectionHeader
-          eyebrow="ERP & CRM Modernization"
-          title="ERP & CRM Modernization"
+          headlineWeight="normal"
+          title={
+            <>
+              ERP & CRM{" "}
+              <span className="text-brand-gradient-reverse">Modernization</span>
+            </>
+          }
           description="We enhance platforms such as SAP, Oracle, Microsoft, Infor, QAD, EPICOR with:"
         />
       </div>

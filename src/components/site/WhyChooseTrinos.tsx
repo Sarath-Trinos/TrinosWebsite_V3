@@ -93,14 +93,13 @@ const WhyChooseTrinos = () => {
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         <div className="container-px max-w-[1400px] mx-auto w-full">
           <div className="max-w-2xl mb-16">
-            <span className="chip mb-5">Why Trinos</span>
-            <h2 className="font-display font-bold text-4xl md:text-5xl text-balance leading-tight">
-              Why Choose{" "}
-              <span className="bg-gradient-to-r from-primary to-primary-deep bg-clip-text text-transparent">
-                Trinos?
-              </span>
+            <h2 className="font-display font-normal text-4xl md:text-5xl text-balance leading-tight text-foreground">
+              Why{" "}
+              <span className="text-brand-gradient">Trinos</span>
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground">Built on four pillars.</p>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Why choose Trinos
+            </p>
           </div>
 
           <div className="relative">

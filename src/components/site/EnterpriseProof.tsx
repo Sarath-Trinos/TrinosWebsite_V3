@@ -7,7 +7,7 @@ const EnterpriseProof = () => (
       <div className="grid lg:grid-cols-2 gap-14 items-center">
         <div>
           <span className="chip bg-white/10 text-white border border-white/10">Built for the enterprise</span>
-          <h2 className="mt-5 font-display font-bold text-4xl md:text-5xl leading-tight text-balance">
+          <h2 className="mt-5 font-display font-normal text-4xl md:text-5xl leading-tight text-balance">
             Where most transformations stall,{" "}
             <span className="bg-gradient-to-r from-primary-glow to-white bg-clip-text text-transparent">we deliver.</span>
           </h2>

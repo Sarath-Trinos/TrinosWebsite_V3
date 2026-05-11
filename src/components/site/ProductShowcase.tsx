@@ -177,7 +177,7 @@ const ProductShowcase = () => (
         >
           <div>
             <span className="chip mb-5">{product.eyebrow}</span>
-            <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-balance leading-tight">
+            <h2 className="font-display font-normal text-4xl md:text-5xl text-balance leading-tight">
               {product.name}
             </h2>
             <p className="mt-5 text-lg text-muted-foreground text-balance">

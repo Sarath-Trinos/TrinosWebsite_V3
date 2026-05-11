@@ -116,6 +116,15 @@
   .shadow-glow { box-shadow: var(--shadow-glow); }
   .text-balance { text-wrap: balance; }
 
+  /* Section headlines — brand multi-stop gradients ( hsl tokens from :root ) */
+  .text-brand-gradient {
+    @apply bg-gradient-to-r from-primary via-primary-glow to-primary-deep bg-clip-text text-transparent;
+  }
+
+  .text-brand-gradient-reverse {
+    @apply bg-gradient-to-r from-primary-deep via-primary to-primary-glow bg-clip-text text-transparent;
+  }
+
   @keyframes float-slow {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }

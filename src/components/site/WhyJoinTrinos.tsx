@@ -187,8 +187,9 @@ const WhyJoinTrinos = () => {
     <section id="why-join" className="py-24 bg-surface-soft">
       <div className="container-px max-w-[1400px] mx-auto">
         <SectionHeader
-          eyebrow="Why join Trinos"
-          title="Build a career with meaning"
+          headlineWeight="normal"
+          title="Why join Trinos"
+          subtitle="Build a career with meaning"
           description="Join a team of passionate innovators transforming enterprises with AI. You'll work on meaningful projects, grow your tech skills, and make a lasting career impact."
         />
 

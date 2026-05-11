@@ -35,9 +35,9 @@ const MissionVision = () => (
           </div>
 
           <div className="flex flex-col gap-5 p-8 md:p-12 lg:p-16">
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold leading-tight text-balance">
+            <h3 className="text-4xl md:text-5xl font-display font-normal leading-tight text-balance">
               <span className="text-black">{prefix}</span>{" "}
-              <span className="bg-gradient-to-r from-primary to-primary-deep bg-clip-text text-transparent">
+              <span className="text-brand-gradient-reverse">
                 {highlight}
               </span>
             </h3>

@@ -94,8 +94,9 @@ const IndustriesGrid = () => (
   <section id="industries" className="py-24 bg-surface-soft">
     <div className="container-px max-w-[1400px] mx-auto">
       <SectionHeader
-        eyebrow="Industries we serve"
-        title="Tailored AI & ERP for every sector"
+        headlineWeight="normal"
+        title="Industries we serve"
+        subtitle="Tailored AI & ERP for every sector"
         description="From regulated industries to fast-moving consumer markets, our solutions adapt to the realities of your operations."
       />
 

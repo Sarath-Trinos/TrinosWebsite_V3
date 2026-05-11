@@ -10,11 +10,11 @@ const ServicesHero = () => {
         <div className="max-w-3xl animate-fade-up">
           <span className="chip mb-5">Services</span>
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.05] text-balance">
-            AI &{" "}
-            <span className="bg-gradient-to-r from-primary to-primary-deep bg-clip-text text-transparent">
+            <span className="text-black">AI &</span>{" "}
+            <span className="text-brand-gradient-reverse">
               Intelligent Systems
             </span>
-            .
+            <span className="text-black">.</span>
           </h1>
           <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl text-balance">
             We develop end-to-end AI solutions that help enterprises automate operations,

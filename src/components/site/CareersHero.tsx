@@ -11,7 +11,7 @@ const CareersHero = () => {
           <span className="chip mb-5">Careers</span>
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.05] text-balance">
             Join a team of{" "}
-            <span className="bg-gradient-to-r from-primary to-primary-deep bg-clip-text text-transparent">
+            <span className="text-brand-gradient-reverse">
               passionate innovators
             </span>
             .

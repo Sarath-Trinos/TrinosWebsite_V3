@@ -65,7 +65,7 @@ const TeamLeadership = () => (
           </div>
 
           <div className="lg:col-span-3">
-            <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-balance leading-tight bg-gradient-to-r from-primary to-primary-deep bg-clip-text text-transparent">
+            <h2 className="font-display font-normal text-4xl md:text-5xl text-balance leading-tight text-brand-gradient-reverse">
               {founder.name}
             </h2>
             <p className="mt-3 text-lg font-semibold text-foreground">{founder.role}</p>

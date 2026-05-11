@@ -99,15 +99,14 @@ const ServicesCapabilities = () => (
   <section id="capabilities" className="bg-[#F9F9F7] py-24">
     <div className="container-px mx-auto max-w-[1400px]">
       <div className="mb-14 max-w-3xl md:mb-16">
-        <span className="chip mb-5">Capabilities</span>
-        <h2 className="font-display text-balance text-4xl font-bold leading-tight md:text-5xl">
-          Our capabilities{" "}
-          <span className="bg-gradient-to-r from-primary to-primary-deep bg-clip-text text-transparent">
-            include
-          </span>
-          .
+        <h2 className="font-display text-balance text-4xl font-normal leading-tight md:text-5xl">
+          <span className="text-black">Our</span>{" "}
+          <span className="text-brand-gradient-reverse">capabilities</span>
         </h2>
-        <p className="mt-5 text-lg text-muted-foreground text-balance">
+        <p className="mt-3 max-w-2xl text-balance font-display font-semibold text-lg md:text-xl leading-snug text-black">
+          Our capabilities include.
+        </p>
+        <p className="mt-4 text-lg text-muted-foreground text-balance">
           A full-stack AI practice — from foundational models to production-grade automation —
           designed to fit how your enterprise actually operates.
         </p>

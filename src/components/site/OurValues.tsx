@@ -22,8 +22,15 @@ const OurValues = () => (
   <section className="bg-background py-24">
     <div className="container-px max-w-[1400px] mx-auto">
       <SectionHeader
-        eyebrow="Our values"
-        title="What we stand for"
+        titleClassName="font-display font-normal text-4xl md:text-5xl text-balance leading-tight"
+        subtitleClassName="font-normal text-muted-foreground"
+        title={
+          <>
+            <span className="text-black">Our</span>{" "}
+            <span className="text-brand-gradient-reverse">values</span>
+          </>
+        }
+        subtitle="What we stand for"
         description="Trinos culture is built on trust, respect, and inclusivity — with Innovation, Integrity, and Excellence as the wellspring of our growth. Everyone is welcome at Trinos regardless of background, age, gender, or experience level."
       />
 
@@ -33,7 +40,7 @@ const OurValues = () => (
             key={title}
             className="tile bg-card p-8 md:p-10 flex flex-col gap-6 hover:shadow-glow"
           >
-            <div className="font-display font-bold text-5xl bg-gradient-to-br from-primary to-primary-deep bg-clip-text text-transparent">
+            <div className="font-display font-bold text-5xl text-brand-gradient-reverse">
               {number}
             </div>
             <div className="h-px w-12 bg-gradient-primary" />

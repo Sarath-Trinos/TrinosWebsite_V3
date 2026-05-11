@@ -17,14 +17,12 @@ const OpenPositions = () => (
     <div className="container-px max-w-[1400px] mx-auto">
       <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
         <div className="lg:col-span-1">
-          <span className="chip mb-5">Open positions</span>
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-balance leading-tight">
-            Find your{" "}
-            <span className="bg-gradient-to-r from-primary to-primary-deep bg-clip-text text-transparent">
-              next role
-            </span>
-            .
+          <h2 className="font-display font-normal text-4xl md:text-5xl text-balance leading-tight text-foreground">
+            Open positions
           </h2>
+          <p className="mt-3 max-w-xl text-balance font-display font-semibold text-lg md:text-xl leading-snug text-foreground">
+            Find your next role
+          </p>
           <p className="mt-6 text-lg text-muted-foreground text-balance">
             Explore exciting opportunities to join our team and help shape the future of
             enterprise AI.

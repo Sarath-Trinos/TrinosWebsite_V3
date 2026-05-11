@@ -120,7 +120,13 @@ const AgentPlatform = () => {
     <section id="agents" className="py-24">
       <div className="container-px max-w-[1600px] mx-auto">
         <SectionHeader
-          title="AI & Intelligent Systems"
+          headlineWeight="normal"
+          title={
+            <>
+              AI & Intelligent{" "}
+              <span className="text-brand-gradient">Systems</span>
+            </>
+          }
           description="Specialized AI agents and enterprise platforms that transform support, workforce operations, and healthcare—with human-like intelligence you can deploy at scale."
         />
         <div className="grid lg:grid-cols-12 lg:gap-3 xl:gap-4">

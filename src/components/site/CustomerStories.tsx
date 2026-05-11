@@ -1,4 +1,4 @@
-import { ArrowUpRight, ShieldCheck, Radar, Network, FileCheck, Lock } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Radar, Network, FileCheck } from "lucide-react";
 
 const services = [
   {
@@ -61,17 +61,13 @@ const CustomerStories = () => (
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
         <div className="max-w-2xl">
-          <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-accent text-accent-foreground border border-primary/20 mb-5">
-            <Lock className="w-3.5 h-3.5" />
-            Cyber Security
-          </span>
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-balance text-foreground">
-            Security is foundational to{" "}
-            <span className="bg-gradient-to-r from-primary to-primary-deep bg-clip-text text-transparent">
-              everything we build.
-            </span>
+          <h2 className="font-display font-normal text-4xl md:text-5xl text-balance text-foreground mb-5">
+            Cyber <span className="text-brand-gradient-reverse">Security</span>
           </h2>
-          <p className="mt-5 text-lg text-muted-foreground text-balance">
+          <p className="font-display font-normal text-lg md:text-xl text-balance mb-5 text-black">
+            Security is foundational to everything we build.
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground text-balance">
             A multi-layered defense strategy — from offensive testing and continuous monitoring to compliance-grade frameworks.
           </p>
         </div>

@@ -11,7 +11,7 @@ const SolutionsHero = () => {
           <span className="chip mb-5">Solutions</span>
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.05] text-balance">
             Industry-specific solutions for{" "}
-            <span className="bg-gradient-to-r from-primary to-primary-deep bg-clip-text text-transparent">
+            <span className="text-brand-gradient-reverse">
               your business
             </span>
             .

@@ -77,14 +77,13 @@ const WhoWeAre = () => (
         </div>
 
         <div className="lg:pt-16">
-          <span className="chip mb-5">Who we are</span>
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-balance leading-tight">
-            A next-generation{" "}
-            <span className="bg-gradient-to-r from-primary to-primary-deep bg-clip-text text-transparent">
-              technology partner
-            </span>
-            .
+          <h2 className="font-display font-normal text-4xl md:text-5xl text-balance leading-tight">
+            <span className="text-black">Who</span>{" "}
+            <span className="text-brand-gradient-reverse">we are</span>
           </h2>
+          <p className="mt-3 max-w-2xl font-display font-normal text-lg md:text-xl text-balance leading-snug text-muted-foreground">
+            A next-generation technology partner.
+          </p>
           <p className="mt-6 text-lg text-muted-foreground text-balance">
             Trinos Technologies is committed to supporting enterprises in achieving secure,
             efficient, and accelerated digital transformation. We create intelligent technology

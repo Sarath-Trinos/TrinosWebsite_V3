@@ -44,7 +44,12 @@ const HealthcareAI = () => {
     <section className="py-24 bg-surface-tint">
       <div className="container-px max-w-[1400px] mx-auto">
         <SectionHeader
-          title="Cloud Solutions"
+          headlineWeight="normal"
+          title={
+            <>
+              Cloud <span className="text-brand-gradient">Solutions</span>
+            </>
+          }
           description="We enable enterprises to modernize, migrate, and optimize on the cloud with confidence."
           exploreHref="#"
         />

@@ -11,7 +11,7 @@ const ProductsHero = () => {
           <span className="chip mb-5">Products</span>
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.05] text-balance">
             Intelligent solutions for{" "}
-            <span className="bg-gradient-to-r from-primary to-primary-deep bg-clip-text text-transparent">
+            <span className="text-brand-gradient-reverse">
               modern enterprises
             </span>
             .
