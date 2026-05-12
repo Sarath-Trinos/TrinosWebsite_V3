@@ -23,6 +23,11 @@ export const metadata: Metadata = {
   title: "Trinos — Power Enterprise decisions with AI that works",
   description:
     "Deploy AI agents that deliver human experiences at AI scale. Voice AI, contact center copilots, and healthcare agents trusted by the world's largest enterprises.",
+  icons: {
+    icon: [{ url: "/Logo.png", type: "image/png" }],
+    shortcut: "/Logo.png",
+    apple: "/Logo.png",
+  },
   openGraph: {
     title: "Trinos — Power Enterprise decisions with AI that works",
     description:

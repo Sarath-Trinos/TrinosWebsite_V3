@@ -90,7 +90,7 @@ const AgentPlatform = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -118,7 +118,7 @@ const AgentPlatform = () => {
 
   return (
     <section id="agents" className="py-24">
-      <div className="container-px max-w-[1600px] mx-auto">
+      <div className="container-px max-w-[1400px] mx-auto">
         <SectionHeader
           headlineWeight="normal"
           title={
@@ -129,15 +129,13 @@ const AgentPlatform = () => {
           }
           description="Specialized AI agents and enterprise platforms that transform support, workforce operations, and healthcare—with human-like intelligence you can deploy at scale."
         />
-        <div className="grid lg:grid-cols-12 lg:gap-3 xl:gap-4">
-          {/* Left: Sliding image with headline + description overlay */}
+        <div className="grid lg:grid-cols-12 lg:gap-4 xl:gap-5">
+          {/* Left: media + overlay — slow horizontal slide into view */}
           <div
             ref={imageWrapperRef}
-            className={`lg:col-span-3 flex items-center justify-start transition-[transform,opacity] duration-[900ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] will-change-transform ${
-              imageVisible ? "translate-x-0 opacity-100" : "translate-x-32 opacity-0"
-            }`}
+            className="lg:col-span-4 flex items-center justify-start"
           >
-            <div className="relative w-full max-w-sm aspect-[3/4] rounded-3xl overflow-hidden shadow-card">
+            <div className="relative w-full max-w-[350px] sm:max-w-sm lg:max-w-full aspect-[4/5] overflow-hidden rounded-3xl">
               {tiles.map((tile, i) => {
                 const isActive = i === activeIndex;
                 return (
@@ -150,33 +148,39 @@ const AgentPlatform = () => {
                       pointerEvents: isActive ? "auto" : "none",
                     }}
                   >
-                    {isActive && tile.video ? (
-                      <video
-                        src={tile.video}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="absolute inset-0 w-full h-full object-cover object-center"
-                      />
-                    ) : (
-                      <Image
-                        src={tile.image}
-                        alt={tile.headline}
-                        fill
-                        placeholder="blur"
-                        sizes="(min-width: 1024px) 30vw, 90vw"
-                        className="object-cover"
-                        priority={i === 0}
-                      />
-                    )}
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/55 to-transparent p-5 md:p-6">
-                      <h3 className="font-display font-bold text-xl md:text-2xl text-white">
-                        {tile.headline}
-                      </h3>
-                      <p className="mt-2 text-sm md:text-[15px] text-white/85 leading-snug">
-                        {tile.description}
-                      </p>
+                    <div
+                      className={`absolute inset-0 transition-transform duration-[2800ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] will-change-transform ${
+                        imageVisible ? "translate-x-0" : "translate-x-full"
+                      }`}
+                    >
+                      {isActive && tile.video ? (
+                        <video
+                          src={tile.video}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="absolute inset-0 w-full h-full object-cover object-center"
+                        />
+                      ) : (
+                        <Image
+                          src={tile.image}
+                          alt={tile.headline}
+                          fill
+                          placeholder="blur"
+                          sizes="(min-width: 1024px) 26vw, 90vw"
+                          className="object-cover"
+                          priority={i === 0}
+                        />
+                      )}
+                      <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/85 via-black/55 to-transparent p-5 md:p-6">
+                        <h3 className="font-display font-bold text-xl md:text-2xl text-white">
+                          {tile.headline}
+                        </h3>
+                        <p className="mt-2 text-sm md:text-[15px] text-white/85 leading-snug">
+                          {tile.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 );
@@ -185,8 +189,8 @@ const AgentPlatform = () => {
           </div>
 
           {/* Right: Platform overview */}
-          <div className="lg:col-span-9 tile py-8 md:py-10 px-6 md:px-8 lg:px-10 relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_#1a3556_0%,_#0f1e35_45%,_#0a1628_100%)] flex items-center justify-center">
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          <div className="lg:col-span-8 tile py-6 md:py-8 px-5 md:px-7 lg:px-8 relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_#1a3556_0%,_#0f1e35_45%,_#0a1628_100%)] flex items-center justify-center">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-3.5">
               {tiles.map(({ icon: Icon, title }, i) => {
                 const isActive = i === activeIndex;
                 return (
@@ -198,14 +202,14 @@ const AgentPlatform = () => {
                     tabIndex={0}
                     role="button"
                     aria-pressed={isActive}
-                    className={`group rounded-2xl border border-white/10 bg-white/5 p-4 md:p-5 flex items-center gap-3 min-h-[110px] cursor-pointer shadow-none outline-none transition-[background-color,box-shadow,border-color] duration-200 hover:border-transparent hover:bg-card hover:shadow-glow focus-visible:border-transparent focus-visible:bg-card focus-visible:shadow-glow ${
+                    className={`group rounded-2xl border border-white/10 bg-white/5 p-3 md:p-3.5 flex items-center gap-3 min-h-[82px] md:min-h-[86px] cursor-pointer shadow-none outline-none transition-[background-color,box-shadow,border-color] duration-200 hover:border-transparent hover:bg-card hover:shadow-glow focus-visible:border-transparent focus-visible:bg-card focus-visible:shadow-glow ${
                       isActive ? "ring-2 ring-primary/40" : ""
                     }`}
                   >
-                    <div className="w-9 h-9 shrink-0 rounded-full bg-gradient-primary grid place-items-center">
-                      <Icon className="w-4 h-4 text-white" />
+                    <div className="w-8 h-8 shrink-0 rounded-full bg-gradient-primary grid place-items-center">
+                      <Icon className="w-3.5 h-3.5 text-white" />
                     </div>
-                    <div className="flex-1 min-w-0 font-semibold text-sm md:text-[15px] text-white/95 leading-snug group-hover:text-foreground group-focus-visible:text-foreground">
+                    <div className="flex-1 min-w-0 font-semibold text-[13px] md:text-sm text-white/95 leading-snug group-hover:text-foreground group-focus-visible:text-foreground">
                       {title}
                     </div>
                   </div>

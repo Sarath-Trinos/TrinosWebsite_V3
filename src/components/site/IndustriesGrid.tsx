@@ -94,8 +94,13 @@ const IndustriesGrid = () => (
   <section id="industries" className="py-24 bg-surface-soft">
     <div className="container-px max-w-[1400px] mx-auto">
       <SectionHeader
-        headlineWeight="normal"
-        title="Industries we serve"
+        titleClassName="font-display font-normal text-4xl md:text-5xl text-balance leading-tight"
+        title={
+          <>
+            <span className="text-black">Industries</span>{" "}
+            <span className="text-brand-gradient-reverse">we serve</span>
+          </>
+        }
         subtitle="Tailored AI & ERP for every sector"
         description="From regulated industries to fast-moving consumer markets, our solutions adapt to the realities of your operations."
       />

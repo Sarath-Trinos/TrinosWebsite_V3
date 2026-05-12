@@ -1,62 +1,38 @@
-import { ArrowUpRight, ShieldCheck, Radar, Network, FileCheck } from "lucide-react";
+import Image from "next/image";
 
-const services = [
+const services: {
+  title: string;
+  description: string;
+  imageSrc: string;
+}[] = [
   {
-    title: "Vulnerability Assessments & Penetration Testing",
-    short: "Pen Testing",
+    title: "VULNERABILITY ASSESSMENT",
     description:
       "Comprehensive security audits to identify and address potential vulnerabilities before they become threats.",
-    icon: ShieldCheck,
-    tags: ["OWASP Top 10", "Red Team", "Code Audits"],
+    imageSrc: "/home/VULNERABILITY%20ASSESSMENT.jpeg",
   },
   {
-    title: "Threat Detection & Monitoring",
-    short: "Threat Monitoring",
+    title: "THREAT DETECTION",
     description:
       "Real-time monitoring and advanced threat detection systems to protect your digital infrastructure 24/7.",
-    icon: Radar,
-    tags: ["24/7 SOC", "SIEM", "Anomaly Detection"],
+    imageSrc: "/home/THREAT%20DETECTION.jpeg",
   },
   {
-    title: "Secure Infrastructure Design",
-    short: "Secure Infra",
+    title: "SECURE INFRASTRUCTURE",
     description:
       "Architect secure, scalable systems from the ground up with security-first design principles.",
-    icon: Network,
-    tags: ["Zero Trust", "Cloud Native", "IAM"],
+    imageSrc: "/home/SECURE%20INFRASTRUCTURE.jpeg",
   },
   {
-    title: "Compliance-driven Security Framework",
-    short: "Compliance",
+    title: "COMPLIANCE FRAMEWORKS",
     description:
       "Ensure your systems meet industry standards and regulatory requirements with comprehensive compliance frameworks.",
-    icon: FileCheck,
-    tags: ["SOC 2", "ISO 27001", "HIPAA"],
+    imageSrc: "/home/complaince.jpeg",
   },
 ];
 
 const CustomerStories = () => (
   <section className="py-24 relative overflow-hidden bg-white">
-    {/* Decorative background */}
-    <div
-      aria-hidden
-      className="absolute inset-0 opacity-[0.04]"
-      style={{
-        backgroundImage:
-          "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
-        backgroundSize: "64px 64px",
-        maskImage: "radial-gradient(ellipse at center, black 30%, transparent 80%)",
-      }}
-    />
-    <div
-      aria-hidden
-      className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-primary/10 blur-3xl"
-    />
-    <div
-      aria-hidden
-      className="absolute -bottom-40 right-0 w-[500px] h-[500px] rounded-full bg-primary-glow/10 blur-3xl"
-    />
-
     <div className="container-px max-w-[1400px] mx-auto relative">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
@@ -71,77 +47,52 @@ const CustomerStories = () => (
             A multi-layered defense strategy — from offensive testing and continuous monitoring to compliance-grade frameworks.
           </p>
         </div>
-        <div className="hidden md:flex items-center gap-3 text-sm text-muted-foreground">
-          <div className="flex -space-x-2">
-            <div className="w-8 h-8 rounded-full bg-emerald-400 border-2 border-white" />
-            <div className="w-8 h-8 rounded-full bg-primary border-2 border-white" />
-            <div className="w-8 h-8 rounded-full bg-amber-400 border-2 border-white" />
-            <div className="w-8 h-8 rounded-full bg-violet-400 border-2 border-white" />
-          </div>
-          <span className="text-xs uppercase tracking-wider font-semibold">4 Core Capabilities</span>
-        </div>
       </div>
 
-      {/* Cards */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      {/* Cards — speech-bubble style, staggered */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5 items-start">
         {services.map((s, i) => {
-          const Icon = s.icon;
+          const isOffset = i % 2 === 1;
           return (
-            <a
+            <div
               key={s.title}
-              href="#"
-              className="group relative rounded-3xl bg-white border border-border p-7 transition-all duration-500 hover:border-primary/40 hover:-translate-y-2 hover:shadow-card"
+              className={`relative ${isOffset ? "lg:mt-20" : ""}`}
             >
-              {/* Glow on hover */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/[0.04] group-hover:to-transparent transition-all duration-500" />
-
-              {/* Top decorative line */}
-              <div className="absolute top-0 left-7 right-7 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-
-              <div className="relative">
-                {/* Header row */}
-                <div className="flex items-start justify-between mb-8">
-                  <div className="relative">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/15 to-primary-glow/5 border border-primary/20 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:border-primary/50">
-                      <Icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <span className="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-full bg-white border border-border flex items-center justify-center font-mono text-[10px] font-bold text-muted-foreground shadow-soft">
-                      0{i + 1}
-                    </span>
-                  </div>
-                  <div className="w-9 h-9 rounded-full border border-border flex items-center justify-center transition-all duration-500 group-hover:bg-primary group-hover:border-primary group-hover:rotate-45 group-hover:text-white text-muted-foreground">
-                    <ArrowUpRight className="w-4 h-4" />
-                  </div>
+              {/* Card */}
+              <div
+                className="relative bg-surface-dark rounded-[28px] p-7 pb-8 animate-float-slow"
+                style={{ animationDelay: `${i * 0.6}s` }}
+              >
+                {/* Numbered marker */}
+                <div className="flex items-center gap-2.5 mb-3">
+                  <span className="inline-block w-2 h-2 bg-white/80" />
+                  <span className="font-mono text-sm tracking-wider text-white/70">
+                    {String(i + 1).padStart(3, "0")}
+                  </span>
                 </div>
 
-                {/* Short label */}
-                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary mb-3">
-                  {s.short}
-                </div>
-
-                {/* Title */}
-                <h3 className="font-display font-bold text-xl leading-tight text-balance min-h-[3.5rem] text-foreground">
+                {/* Title — mono / pixel feel */}
+                <h3 className="font-mono font-bold text-[1.05rem] md:text-[1.15rem] leading-tight tracking-wide text-white mb-4">
                   {s.title}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground text-balance">
+                <p className="text-sm leading-relaxed text-white/70 mb-6">
                   {s.description}
                 </p>
 
-                {/* Tags */}
-                <div className="mt-6 pt-5 border-t border-border flex flex-wrap gap-1.5">
-                  {s.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="px-2.5 py-1 rounded-md text-[11px] font-medium bg-surface-soft border border-border text-muted-foreground group-hover:border-primary/20 transition-colors"
-                    >
-                      {t}
-                    </span>
-                  ))}
+                {/* Illustrative image */}
+                <div className="relative aspect-[4/3] rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
+                  <Image
+                    src={s.imageSrc}
+                    alt={s.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
                 </div>
               </div>
-            </a>
+            </div>
           );
         })}
       </div>
