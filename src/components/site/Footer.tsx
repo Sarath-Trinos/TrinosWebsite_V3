@@ -81,9 +81,26 @@ const Footer = () => (
                 aria-label={label}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-9 w-9 inline-flex items-center justify-center rounded-full border border-white/15 text-white/70 hover:text-white hover:border-primary-glow hover:bg-primary/20 transition-colors"
+                className="social-ring group relative h-9 w-9 inline-flex items-center justify-center rounded-full text-white/70 hover:text-white transition-colors"
               >
-                <Icon size={16} />
+                <span className="absolute inset-0 rounded-full border border-white/15" aria-hidden="true" />
+                <svg
+                  className="social-ring__svg absolute inset-0 h-full w-full"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <circle
+                    cx="18"
+                    cy="18"
+                    r="17.5"
+                    stroke="hsl(var(--primary-glow))"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    pathLength="100"
+                  />
+                </svg>
+                <Icon size={16} className="relative" />
               </a>
             ))}
           </div>
@@ -93,7 +110,7 @@ const Footer = () => (
             <h4 className="font-display font-bold text-sm uppercase tracking-wider text-white/90 mb-4">{c.title}</h4>
             <ul className="space-y-3">
               {c.links.map((l) => (
-                <li key={l.label}><a href={l.href} className="text-white/60 hover:text-primary-glow text-sm transition-colors">{l.label}</a></li>
+                <li key={l.label}><a href={l.href} className="footer-link text-sm">{l.label}</a></li>
               ))}
             </ul>
           </div>

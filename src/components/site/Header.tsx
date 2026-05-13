@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Logo from "./Logo";
 
@@ -29,6 +30,11 @@ const navItems: NavItem[] = [
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+  const isGroupActive = (children: NavLink[]) => children.some((c) => isActive(c.href));
 
   useEffect(() => {
     let ticking = false;
@@ -62,7 +68,11 @@ const Header = () => {
               <div key={item.label} className="relative group">
                 <button
                   type="button"
-                  className="flex items-center gap-1 px-4 py-2 text-base font-medium text-foreground/80 hover:text-foreground rounded-full transition-colors"
+                  className={`nav-link flex items-center gap-1 px-4 py-2 text-base font-medium rounded-full transition-colors ${
+                    isGroupActive(item.children)
+                      ? "is-active text-primary"
+                      : "text-foreground/80 hover:text-primary"
+                  }`}
                 >
                   {item.label}
                   <ChevronDown className="w-3.5 h-3.5 opacity-60" />
@@ -73,7 +83,11 @@ const Header = () => {
                       <a
                         key={c.label}
                         href={c.href}
-                        className="block px-4 py-2.5 text-sm rounded-xl hover:bg-surface-soft text-foreground/80 hover:text-primary transition-colors"
+                        className={`block px-4 py-2.5 text-sm rounded-xl hover:bg-surface-soft transition-colors ${
+                          isActive(c.href)
+                            ? "text-primary bg-surface-soft"
+                            : "text-foreground/80 hover:text-primary"
+                        }`}
                       >
                         {c.label}
                       </a>
@@ -85,7 +99,11 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="px-4 py-2 text-base font-medium text-foreground/80 hover:text-foreground rounded-full transition-colors"
+                className={`nav-link px-4 py-2 text-base font-medium rounded-full transition-colors ${
+                  isActive(item.href)
+                    ? "is-active text-primary"
+                    : "text-foreground/80 hover:text-primary"
+                }`}
               >
                 {item.label}
               </a>

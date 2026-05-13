@@ -4,30 +4,40 @@ const services: {
   title: string;
   description: string;
   imageSrc: string;
+  cardBg: string;
+  accentText: string;
 }[] = [
   {
     title: "VULNERABILITY ASSESSMENT",
     description:
       "Comprehensive security audits to identify and address potential vulnerabilities before they become threats.",
     imageSrc: "/home/VULNERABILITY%20ASSESSMENT.jpeg",
+    cardBg: "bg-[#EFE6FF]",
+    accentText: "text-[#6D28D9]",
   },
   {
     title: "THREAT DETECTION",
     description:
       "Real-time monitoring and advanced threat detection systems to protect your digital infrastructure 24/7.",
     imageSrc: "/home/THREAT%20DETECTION.jpeg",
+    cardBg: "bg-[#FFE9CC]",
+    accentText: "text-[#9A4B00]",
   },
   {
     title: "SECURE INFRASTRUCTURE",
     description:
       "Architect secure, scalable systems from the ground up with security-first design principles.",
     imageSrc: "/home/SECURE%20INFRASTRUCTURE.jpeg",
+    cardBg: "bg-[#D6F4E4]",
+    accentText: "text-[#0F7A41]",
   },
   {
     title: "COMPLIANCE FRAMEWORKS",
     description:
       "Ensure your systems meet industry standards and regulatory requirements with comprehensive compliance frameworks.",
     imageSrc: "/home/complaince.jpeg",
+    cardBg: "bg-[#DCEBFF]",
+    accentText: "text-[#1D4ED8]",
   },
 ];
 
@@ -60,29 +70,28 @@ const CustomerStories = () => (
             >
               {/* Card */}
               <div
-                className="relative bg-surface-dark rounded-[28px] p-7 pb-8 animate-float-slow"
+                className={`relative ${s.cardBg} rounded-[28px] p-7 pb-8 animate-float-slow`}
                 style={{ animationDelay: `${i * 0.6}s` }}
               >
                 {/* Numbered marker */}
-                <div className="flex items-center gap-2.5 mb-3">
-                  <span className="inline-block w-2 h-2 bg-white/80" />
-                  <span className="font-mono text-sm tracking-wider text-white/70">
+                <div className="mb-3">
+                  <span className={`font-mono text-sm tracking-wider ${s.accentText}`}>
                     {String(i + 1).padStart(3, "0")}
                   </span>
                 </div>
 
                 {/* Title — mono / pixel feel */}
-                <h3 className="font-mono font-bold text-[1.05rem] md:text-[1.15rem] leading-tight tracking-wide text-white mb-4">
+                <h3 className="font-mono font-bold text-[1.05rem] md:text-[1.15rem] leading-tight tracking-wide text-foreground mb-4">
                   {s.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm leading-relaxed text-white/70 mb-6">
+                <p className="text-sm leading-relaxed text-foreground/70 mb-6">
                   {s.description}
                 </p>
 
                 {/* Illustrative image */}
-                <div className="relative aspect-[4/3] rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
+                <div className="relative aspect-[4/3] rounded-2xl bg-white/60 border border-black/5 overflow-hidden">
                   <Image
                     src={s.imageSrc}
                     alt={s.title}

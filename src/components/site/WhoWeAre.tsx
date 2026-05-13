@@ -64,7 +64,7 @@ const WhoWeAre = () => (
             {floatingIcons.map(({ Icon, label, iconBg, style, delay }) => (
               <div
                 key={label}
-                className={`absolute ${style} animate-float-slow flex items-center gap-2 rounded-full bg-white/90 backdrop-blur-sm pl-1.5 pr-4 py-1.5`}
+                className={`absolute ${style} animate-float-slow will-change-transform flex items-center gap-2 rounded-full bg-white shadow-sm pl-1.5 pr-4 py-1.5`}
                 style={{ animationDelay: delay }}
               >
                 <span className={`flex h-9 w-9 items-center justify-center rounded-full ${iconBg} text-white`}>

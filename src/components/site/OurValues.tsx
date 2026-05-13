@@ -1,20 +1,40 @@
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 
 const values = [
   {
     number: "01",
+    tag: "Our Value",
     title: "Innovation",
     description: "We bring cutting-edge AI to real business challenges.",
+    image:
+      "/about us /ai-generate-concept-artificial-intelligence-content-generator-tool-man-uses-laptop-with-ai-assis.jpg",
+    cardBg: "bg-[#EFE6FF]",
+    tagText: "text-[#6D28D9]",
+    linkText: "text-[#6D28D9]",
   },
   {
     number: "02",
+    tag: "Our Value",
     title: "Integrity",
     description: "Security, transparency, and trust define every engagement.",
+    image:
+      "/about us /woman-hand-holding-virtual-global-internet-connection-metaverse-business-global-internet-connection-application-technology-digital-marketing-financial-banking-digital-link-tech-big-data.jpg",
+    cardBg: "bg-[#FFE9CC]",
+    tagText: "text-[#9A4B00]",
+    linkText: "text-[#9A4B00]",
   },
   {
     number: "03",
+    tag: "Our Value",
     title: "Excellence",
     description: "We deliver engineering precision and world-class quality.",
+    image:
+      "/about us /closeup-human-eye-with-cityscape-reflected-pupil-representing-world-through-one39s-vision.jpg",
+    cardBg: "bg-[#D6F4E4]",
+    tagText: "text-[#0F7A41]",
+    linkText: "text-[#0F7A41]",
   },
 ];
 
@@ -35,21 +55,54 @@ const OurValues = () => (
       />
 
       <div className="grid md:grid-cols-3 gap-6">
-        {values.map(({ number, title, description }) => (
-          <div
-            key={title}
-            className="tile bg-card p-8 md:p-10 flex flex-col gap-6 hover:shadow-glow"
-          >
-            <div className="font-display font-bold text-5xl text-brand-gradient-reverse">
-              {number}
+        {values.map(
+          ({ number, tag, title, description, image, cardBg, tagText, linkText }) => (
+            <div
+              key={title}
+              className={`${cardBg} relative rounded-3xl pt-8 md:pt-10 pb-6 px-6 flex flex-col transition-shadow hover:shadow-card`}
+            >
+              <span
+                className={`absolute top-6 right-6 font-display font-bold text-5xl ${tagText} opacity-25`}
+              >
+                {number}
+              </span>
+
+              <div>
+                <span
+                  className={`inline-flex w-fit items-center rounded-full bg-white px-4 py-1.5 text-sm font-semibold ${tagText}`}
+                >
+                  {tag}
+                </span>
+
+                <h3 className="mt-8 font-display font-bold text-2xl text-foreground">
+                  {title}
+                </h3>
+
+                <p className="mt-5 text-base md:text-lg text-foreground/70 leading-relaxed">
+                  {description}
+                </p>
+
+                <a
+                  href="#"
+                  className={`mt-6 inline-flex items-center gap-2 font-semibold ${linkText}`}
+                >
+                  Read more
+                  <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
+                </a>
+              </div>
+
+              <div className="mt-6 rounded-2xl overflow-hidden">
+                <Image
+                  src={image}
+                  alt={title}
+                  width={800}
+                  height={500}
+                  className="w-full h-56 object-cover"
+                />
+              </div>
             </div>
-            <div className="h-px w-12 bg-gradient-primary" />
-            <div>
-              <h3 className="font-display font-bold text-2xl text-foreground">{title}</h3>
-              <p className="mt-3 text-muted-foreground leading-relaxed">{description}</p>
-            </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
     </div>
   </section>
