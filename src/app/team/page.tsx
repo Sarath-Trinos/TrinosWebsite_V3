@@ -19,7 +19,7 @@ export default function TeamPage() {
       <TeamHero />
       <TeamLeadership />
       <CombinedLeadership />
-      <CTASection />
+      <CTASection variant="blue" />
       <Footer />
     </main>
   );

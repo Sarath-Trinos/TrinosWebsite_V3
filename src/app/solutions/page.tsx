@@ -17,7 +17,7 @@ export default function SolutionsPage() {
       <Header />
       <SolutionsHero />
       <IndustriesGrid />
-      <CTASection />
+      <CTASection variant="orange" />
       <Footer />
     </main>
   );

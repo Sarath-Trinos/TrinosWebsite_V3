@@ -48,30 +48,30 @@ const TeamLeadership = () => (
       {founders.map((founder) => (
         <div
           key={founder.name}
-          className={`grid lg:grid-cols-5 gap-10 lg:gap-16 items-start ${
+          className={`grid lg:grid-cols-12 gap-8 lg:gap-12 items-start ${
             founder.reverse ? "lg:[&>*:first-child]:order-2" : ""
           }`}
         >
-          <div className="lg:col-span-2">
-            <div className="relative max-w-md mx-auto lg:mx-0">
+          <div className="lg:col-span-4">
+            <div className="relative max-w-xs mx-auto lg:mx-0">
               <Image
                 src={founder.image}
                 alt={`${founder.name} portrait`}
-                width={800}
-                height={800}
+                width={600}
+                height={600}
                 className="w-full h-auto"
               />
             </div>
           </div>
 
-          <div className="lg:col-span-3">
-            <h2 className="font-display font-normal text-4xl md:text-5xl text-balance leading-tight text-brand-gradient-reverse">
+          <div className="lg:col-span-8">
+            <h2 className="font-display font-normal text-3xl md:text-4xl text-balance leading-tight text-brand-gradient-reverse">
               {founder.name}
             </h2>
-            <p className="mt-3 text-lg font-semibold text-foreground">{founder.role}</p>
-            <div className="mt-6 space-y-4">
+            <p className="mt-2 text-base font-semibold text-foreground">{founder.role}</p>
+            <div className="mt-5 space-y-3">
               {founder.bio.map((paragraph, i) => (
-                <p key={i} className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                <p key={i} className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   {paragraph}
                 </p>
               ))}

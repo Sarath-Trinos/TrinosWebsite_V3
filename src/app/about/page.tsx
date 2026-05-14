@@ -21,7 +21,7 @@ export default function AboutPage() {
       <WhoWeAre />
       <OurValues />
       <MissionVision />
-      <CTASection />
+      <CTASection variant="green" />
       <Footer />
     </main>
   );

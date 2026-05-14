@@ -20,7 +20,7 @@ export default function Home() {
       <EnterpriseProof />
       <CustomerStories />
       <WhyChooseTrinos />
-      <CTASection />
+      <CTASection variant="purple" />
       <Footer />
     </main>
   );

@@ -21,7 +21,7 @@ export default function CareersPage() {
       <WhyJoinTrinos />
       <OpenPositions />
       <OurCulture />
-      <CTASection />
+      <CTASection variant="pink" />
       <Footer />
     </main>
   );

@@ -9,6 +9,7 @@ import erpPerformance from "@/assets/erp-performance.png";
 const items = [
   {
     image: erpAnalytics,
+    video: "/videos/e_ef_f_d_mp_.mp4",
     title: "AI-driven analytics",
     desc: "Transform raw data into actionable insights with advanced AI analytics that predict trends and optimize decision-making.",
     cta: "Explore Analytics",
@@ -16,6 +17,7 @@ const items = [
   },
   {
     image: erpUx,
+    video: "/videos/fbe_a_b_a_f_f_c_mp_.mp4",
     title: "Intelligent UX layers",
     desc: "Create intuitive, user-friendly interfaces that adapt to user behavior and enhance productivity across all touchpoints.",
     cta: "Explore UX Layers",
@@ -57,13 +59,24 @@ const ErpCrmModernization = () => (
         {items.map((it) => (
           <article key={it.title} className="flex flex-col">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-surface-soft mb-6">
-              <Image
-                src={it.image}
-                alt={it.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              />
+              {it.video ? (
+                <video
+                  src={it.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              ) : (
+                <Image
+                  src={it.image}
+                  alt={it.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+              )}
             </div>
             <h3 className="font-display font-bold text-2xl mb-3 text-balance">
               {it.title}

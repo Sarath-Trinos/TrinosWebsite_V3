@@ -26,15 +26,11 @@ const OurCulture = () => (
     <div className="container-px max-w-[1400px] mx-auto">
       <div className="grid lg:grid-cols-2 gap-14 items-start">
         <div className="lg:sticky lg:top-28">
-          <h2 className="font-display font-normal text-4xl md:text-5xl text-balance leading-tight text-foreground">
+          <h2 className="font-display font-normal text-4xl md:text-5xl text-balance leading-tight text-brand-gradient-reverse">
             Our culture
           </h2>
           <p className="mt-3 max-w-xl text-balance font-display font-semibold text-lg md:text-xl leading-snug text-foreground">
-            A culture built on{" "}
-            <span className="text-brand-gradient-reverse">
-              ownership
-            </span>
-            .
+            A culture built on ownership.
           </p>
           <p className="mt-6 text-lg text-muted-foreground text-balance">
             At Trinos, we foster a culture of innovation, collaboration, and continuous

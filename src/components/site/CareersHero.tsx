@@ -21,21 +21,13 @@ const CareersHero = () => {
             impact at Trinos.
           </p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-4">
-            <a
-              href="#open-positions"
-              className="group inline-flex items-center gap-2 bg-gradient-cta text-primary-foreground font-semibold px-7 py-3.5 rounded-full shadow-glow hover:shadow-card transition-all"
-            >
-              View open roles
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </a>
-            <a
-              href="#why-join"
-              className="inline-flex items-center gap-2 font-semibold px-6 py-3.5 rounded-full border border-border text-foreground hover:border-primary hover:text-primary transition-colors"
-            >
-              Why Trinos
-            </a>
-          </div>
+          <a
+            href="#open-positions"
+            className="group mt-9 inline-flex items-center gap-2 bg-gradient-cta text-primary-foreground font-semibold px-7 py-3.5 rounded-full shadow-glow hover:shadow-card transition-all"
+          >
+            View open roles
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </a>
         </div>
       </div>
     </section>
