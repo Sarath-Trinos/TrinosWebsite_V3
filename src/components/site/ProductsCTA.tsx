@@ -3,11 +3,11 @@ import { ArrowRight } from "lucide-react";
 const ProductsCTA = () => (
   <section id="build-with-us" className="py-24">
     <div className="container-px max-w-[1400px] mx-auto">
-      <div className="tile bg-[#FFF4C7] p-12 md:p-20 text-center relative overflow-hidden">
+      <div className="tile bg-[#FFF4C7] p-8 md:p-12 lg:p-20 text-center relative overflow-hidden">
         <div className="absolute -top-32 -left-32 w-[400px] h-[400px] rounded-full bg-white/40 blur-3xl" />
         <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-white/40 blur-3xl" />
         <div className="relative">
-          <h2 className="font-display font-normal text-4xl md:text-5xl text-balance text-[#5C3A06]">
+          <h2 className="font-display font-normal text-3xl sm:text-4xl md:text-5xl text-balance text-[#5C3A06]">
             Building a product like these?
           </h2>
           <p className="mt-5 text-lg md:text-xl text-[#5C3A06]/80 max-w-2xl mx-auto text-balance">

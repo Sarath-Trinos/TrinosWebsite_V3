@@ -48,12 +48,12 @@ const TeamLeadership = () => (
       {founders.map((founder) => (
         <div
           key={founder.name}
-          className={`grid lg:grid-cols-12 gap-8 lg:gap-12 items-start ${
-            founder.reverse ? "lg:[&>*:first-child]:order-2" : ""
+          className={`grid md:grid-cols-12 gap-8 md:gap-10 lg:gap-12 items-start ${
+            founder.reverse ? "md:[&>*:first-child]:order-2" : ""
           }`}
         >
-          <div className="lg:col-span-4">
-            <div className="relative max-w-xs mx-auto lg:mx-0">
+          <div className="md:col-span-4">
+            <div className="relative max-w-xs mx-auto md:mx-0">
               <Image
                 src={founder.image}
                 alt={`${founder.name} portrait`}
@@ -64,7 +64,7 @@ const TeamLeadership = () => (
             </div>
           </div>
 
-          <div className="lg:col-span-8">
+          <div className="md:col-span-8">
             <h2 className="font-display font-normal text-3xl md:text-4xl text-balance leading-tight text-brand-gradient-reverse">
               {founder.name}
             </h2>

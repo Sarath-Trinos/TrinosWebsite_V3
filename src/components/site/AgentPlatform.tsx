@@ -61,6 +61,7 @@ const tiles: Tile[] = [
     description:
       "Leverage natural language processing and computer vision technologies.",
     image: heroAgent,
+    video: "/videos/mp_ (1).mp4",
   },
   {
     icon: Workflow,
@@ -129,13 +130,13 @@ const AgentPlatform = () => {
           }
           description="Specialized AI agents and enterprise platforms that transform support, workforce operations, and healthcare—with human-like intelligence you can deploy at scale."
         />
-        <div className="grid lg:grid-cols-12 lg:gap-4 xl:gap-5">
+        <div className="flex flex-col gap-6 lg:grid lg:grid-cols-12 lg:gap-4 xl:gap-5">
           {/* Left: media + overlay — slow horizontal slide into view */}
           <div
             ref={imageWrapperRef}
-            className="lg:col-span-4 flex items-center justify-start"
+            className="lg:col-span-4 flex items-center justify-center lg:justify-start"
           >
-            <div className="relative w-full max-w-[350px] sm:max-w-sm lg:max-w-full aspect-[4/5] overflow-hidden rounded-3xl">
+            <div className="relative w-full max-w-[300px] sm:max-w-sm lg:max-w-full aspect-[4/5] overflow-hidden rounded-3xl">
               {tiles.map((tile, i) => {
                 const isActive = i === activeIndex;
                 return (

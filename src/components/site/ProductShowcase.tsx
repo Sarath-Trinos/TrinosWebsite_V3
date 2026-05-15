@@ -171,13 +171,13 @@ const ProductShowcase = () => (
       {products.map((product) => (
         <div
           key={product.name}
-          className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${
+          className={`grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-center ${
             product.reverse ? "lg:[&>*:first-child]:order-2" : ""
           }`}
         >
           <div>
             <span className="chip mb-5">{product.eyebrow}</span>
-            <h2 className="font-display font-normal text-4xl md:text-5xl text-balance leading-tight">
+            <h2 className="font-display font-normal text-3xl sm:text-4xl md:text-5xl text-balance leading-tight">
               {product.name}
             </h2>
             <p className="mt-5 text-lg text-muted-foreground text-balance">

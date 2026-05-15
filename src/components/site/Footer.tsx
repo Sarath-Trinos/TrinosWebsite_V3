@@ -67,8 +67,8 @@ const footerCols = [
 const Footer = () => (
   <footer className="bg-surface-dark text-on-surface-dark pt-20 pb-10">
     <div className="container-px max-w-[1400px] mx-auto">
-      <div className="grid lg:grid-cols-6 gap-10 pb-14 border-b border-white/10">
-        <div className="lg:col-span-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-10 pb-14 border-b border-white/10">
+        <div className="sm:col-span-2 md:col-span-3 lg:col-span-2">
           <Logo />
           <p className="mt-5 text-white/70 max-w-sm">
             Trinos transforms enterprises with intelligent, secure, and scalable technology — from AI and Cloud to Cyber Security and Enterprise Software Engineering.

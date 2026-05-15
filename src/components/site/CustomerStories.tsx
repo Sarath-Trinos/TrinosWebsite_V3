@@ -60,7 +60,7 @@ const CustomerStories = () => (
       </div>
 
       {/* Cards — speech-bubble style, staggered */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5 items-start">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 lg:gap-5 items-start">
         {services.map((s, i) => {
           const isOffset = i % 2 === 1;
           return (

@@ -9,7 +9,7 @@ const values = [
     title: "Innovation",
     description: "We bring cutting-edge AI to real business challenges.",
     image:
-      "/about us /ai-generate-concept-artificial-intelligence-content-generator-tool-man-uses-laptop-with-ai-assis.jpg",
+      "/about us /3d-rendering-robot-looking-opportunity-top-staircases.jpg",
     cardBg: "bg-[#EFE6FF]",
     tagText: "text-[#6D28D9]",
     linkText: "text-[#6D28D9]",
@@ -54,7 +54,7 @@ const OurValues = () => (
         description="Trinos culture is built on trust, respect, and inclusivity — with Innovation, Integrity, and Excellence as the wellspring of our growth. Everyone is welcome at Trinos regardless of background, age, gender, or experience level."
       />
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
         {values.map(
           ({ number, tag, title, description, image, cardBg, tagText, linkText }) => (
             <div
@@ -97,7 +97,7 @@ const OurValues = () => (
                   alt={title}
                   width={800}
                   height={500}
-                  className="w-full h-56 object-cover"
+                  className="w-full h-44 sm:h-48 md:h-56 object-cover"
                 />
               </div>
             </div>

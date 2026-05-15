@@ -175,7 +175,7 @@ const WhyJoinTrinos = () => {
 
         <div className="relative">
           <div className="relative overflow-hidden">
-            <div className="grid h-[360px] grid-cols-1 items-stretch gap-6 md:h-[340px] md:grid-cols-12 md:gap-10">
+            <div className="grid h-[320px] grid-cols-1 items-stretch gap-6 sm:h-[360px] md:h-[340px] md:grid-cols-12 md:gap-10">
               {/* Active slot */}
               <div className="relative overflow-hidden md:col-span-7">
                 <SlotContent index={index} variant="active">
@@ -183,8 +183,8 @@ const WhyJoinTrinos = () => {
                 </SlotContent>
               </div>
 
-              {/* Preview slot */}
-              <div className="relative overflow-hidden md:col-span-5">
+              {/* Preview slot — hidden on mobile, the active card carries the story alone */}
+              <div className="relative hidden overflow-hidden md:col-span-5 md:block">
                 <SlotContent index={index} variant="preview">
                   <PreviewCard slide={previewSlide} />
                 </SlotContent>

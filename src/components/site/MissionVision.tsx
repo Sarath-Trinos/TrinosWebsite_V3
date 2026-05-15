@@ -15,7 +15,7 @@ const items = [
     highlight: "vision",
     text: "To be a global leader in AI-driven enterprise transformation by delivering future-ready, scalable, and secure technology platforms.",
     image:
-      "/about us /woman-hand-holding-virtual-global-internet-connection-metaverse-business-global-internet-connection-application-technology-digital-marketing-financial-banking-digital-link-tech-big-data.jpg",
+      "/about us /magnific_2982314553.jpeg",
     alt: "Our vision",
     imageClassName: "object-cover",
   },

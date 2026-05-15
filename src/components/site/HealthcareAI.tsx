@@ -54,8 +54,8 @@ const HealthcareAI = () => {
           exploreHref="#"
         />
 
-        <div className="grid lg:grid-cols-5 gap-6">
-          <div className="lg:col-span-2 tile bg-card overflow-hidden relative aspect-[4/5]">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div className="md:col-span-2 tile bg-card overflow-hidden relative aspect-[4/5]">
             {cards.map((card, i) => (
               <Image
                 key={card.title}
@@ -80,7 +80,7 @@ const HealthcareAI = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-3 grid gap-6">
+          <div className="md:col-span-3 grid gap-4 md:gap-6">
             {cards.map((it, i) => {
               const isActive = i === activeIndex;
               return (

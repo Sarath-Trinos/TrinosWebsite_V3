@@ -48,11 +48,11 @@ const CTASection = ({ variant = "purple" }: { variant?: Variant }) => {
   return (
     <section id="demo" className="py-24">
       <div className="container-px max-w-[1400px] mx-auto">
-        <div className={`tile ${v.bg} p-12 md:p-20 text-center relative overflow-hidden`}>
+        <div className={`tile ${v.bg} p-8 md:p-12 lg:p-20 text-center relative overflow-hidden`}>
           <div className="absolute -top-32 -left-32 w-[400px] h-[400px] rounded-full bg-white/40 blur-3xl" />
           <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-white/40 blur-3xl" />
           <div className="relative">
-            <h2 className={`font-display font-normal text-4xl md:text-5xl text-balance ${v.title}`}>
+            <h2 className={`font-display font-normal text-3xl sm:text-4xl md:text-5xl text-balance ${v.title}`}>
               Ready to build intelligent, secure, and scalable solutions?
             </h2>
             <p className={`mt-5 text-lg md:text-xl max-w-2xl mx-auto text-balance ${v.subtitle}`}>

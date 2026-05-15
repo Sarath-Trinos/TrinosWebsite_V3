@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 import { ChevronRight } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 import erpAnalytics from "@/assets/erp-analytics.png";
@@ -25,6 +28,7 @@ const items = [
   },
   {
     image: erpWorkflow,
+    video: "/videos/mp_ (2).mp4",
     title: "Workflow automation",
     desc: "Streamline business processes with intelligent automation that reduces manual work and eliminates bottlenecks.",
     cta: "Explore Automation",
@@ -38,6 +42,41 @@ const items = [
     href: "#",
   },
 ];
+
+function CardVideo({ src }: { src: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    el.muted = true;
+    const tryPlay = () => {
+      const p = el.play();
+      if (p && typeof p.catch === "function") p.catch(() => {});
+    };
+    tryPlay();
+    const onVisible = () => {
+      if (document.visibilityState === "visible") tryPlay();
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => document.removeEventListener("visibilitychange", onVisible);
+  }, []);
+
+  return (
+    <video
+      ref={ref}
+      src={src}
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="auto"
+      disablePictureInPicture
+      disableRemotePlayback
+      className="absolute inset-0 w-full h-full object-cover"
+    />
+  );
+}
 
 const ErpCrmModernization = () => (
   <section className="py-24">
@@ -60,14 +99,7 @@ const ErpCrmModernization = () => (
           <article key={it.title} className="flex flex-col">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-surface-soft mb-6">
               {it.video ? (
-                <video
-                  src={it.video}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+                <CardVideo src={it.video} />
               ) : (
                 <Image
                   src={it.image}

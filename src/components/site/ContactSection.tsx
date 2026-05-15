@@ -23,10 +23,10 @@ const inputClass =
   "w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors";
 
 const ContactSection = () => (
-  <section className="py-20 bg-background">
-    <div className="container-px max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16">
+  <section className="py-16 md:py-20 bg-background">
+    <div className="container-px max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16">
       <div>
-        <h2 className="font-display font-normal text-4xl md:text-5xl text-balance text-foreground">Send us a message</h2>
+        <h2 className="font-display font-normal text-3xl sm:text-4xl md:text-5xl text-balance text-foreground">Send us a message</h2>
 
         <form className="mt-8 space-y-5">
           <div className="grid sm:grid-cols-2 gap-5">
@@ -126,7 +126,7 @@ const ContactSection = () => (
       </div>
 
       <div>
-        <h2 className="font-display font-normal text-4xl md:text-5xl text-balance text-foreground">Get in touch</h2>
+        <h2 className="font-display font-normal text-3xl sm:text-4xl md:text-5xl text-balance text-foreground">Get in touch</h2>
         <p className="mt-5 text-muted-foreground max-w-md">
           Have a question or want to discuss a project? Our team is here to help. Reach out through
           any of these channels, and we'll respond within 24 hours.

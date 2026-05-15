@@ -49,11 +49,15 @@ const Hero = () => {
 
       <div className="container-px max-w-[1400px] mx-auto relative z-10 w-full">
         <div className="max-w-4xl animate-fade-up text-white">
-          <h1 className="font-display text-4xl sm:text-5xl md:text-5xl lg:text-6xl leading-[1.05] whitespace-nowrap">
-            Transforming Enterprises with
-            <br />
-            Intelligent, Secure &amp; Scalable
-            <br />
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] sm:leading-[1.05]">
+            Transforming Enterprises with{" "}
+            <span className="hidden sm:inline">
+              <br />
+            </span>
+            Intelligent, Secure &amp; Scalable{" "}
+            <span className="hidden sm:inline">
+              <br />
+            </span>
             Technology
           </h1>
           <p className="mt-6 text-lg md:text-xl text-white/85 max-w-xl text-balance">
