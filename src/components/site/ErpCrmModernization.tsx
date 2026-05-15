@@ -12,7 +12,7 @@ import erpPerformance from "@/assets/erp-performance.png";
 const items = [
   {
     image: erpAnalytics,
-    video: "/videos/e_ef_f_d_mp_.mp4",
+    video: "/videos/ab_cdef_abcdefmp_.mp4",
     title: "AI-driven analytics",
     desc: "Transform raw data into actionable insights with advanced AI analytics that predict trends and optimize decision-making.",
     cta: "Explore Analytics",

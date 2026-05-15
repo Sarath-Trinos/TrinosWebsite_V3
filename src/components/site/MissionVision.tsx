@@ -6,7 +6,7 @@ const items = [
     highlight: "mission",
     text: "To empower organizations with intelligent and secure digital solutions that accelerate transformation and unlock operational excellence.",
     image:
-      "/about us /ai-generate-concept-artificial-intelligence-content-generator-tool-man-uses-laptop-with-ai-assis.jpg",
+      "/about us /magnific__just-expand-the-background-with-plane-black__85858.jpeg",
     alt: "Our mission",
     imageClassName: "object-cover object-bottom-right",
   },
